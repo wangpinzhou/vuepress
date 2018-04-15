@@ -8,7 +8,7 @@ meta:
 
 ## 标题锚（Header Anchors）
 
-标题自动获取锚链接。可以使用 [`markdown.anchor`](../config/#markdownanchor)  选项来配置锚点的渲染。
+标题会自动获取锚链接。可以使用 [`markdown.anchor`](../config/#markdownanchor)  选项来配置锚点的渲染。
 
 ## 链接（Links）
 
@@ -22,9 +22,9 @@ meta:
   - [vuejs.org](https://vuejs.org)
   - [VuePress on GitHub](https://github.com/vuejs/vuepress)
 
-## YAML 前置物
+## YAML Front Matter
 
-开箱即用支持 [YAML 前置物](https://jekyllrb.com/docs/frontmatter/)
+支持 [YAML Front Matter](https://jekyllrb.com/docs/frontmatter/) 开箱即用
 
 ``` yaml
 ---
@@ -33,7 +33,7 @@ lang: en-US
 ---
 ```
 
-数据将可用于页面的其余部分，以及所有自定义和主题组件作为 `$page`。
+数据在页面的其余部分也可以使用，包括所有自定义和主题组件，通过 `$page` 访问。
 
 `title` 和 `lang` 会在当前页面自动设置。另外，你可以指定额外的 meta 标签进行注入：
 
