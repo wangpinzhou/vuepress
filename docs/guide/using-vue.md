@@ -2,9 +2,9 @@
 
 ## 浏览器 API 访问限制
 
-由于 VuePress 应用程序在生成静态构建时在 Node.js 中进行服务器呈现，所以任何 Vue 用法都必须符合[通用代码要求](https://ssr.vuejs.org/en/universal.html)。简而言之，确保只在 `beforeMounted` 或 `mounted` 钩子中访问 Browser / DOM API。
+由于 VuePress 应用程序在生成静态构建文件时会在 Node.js 中进行服务器渲染，所以任何 Vue 用法都必须符合[通用代码要求](https://ssr.vuejs.org/en/universal.html)。简而言之，确保只在 `beforeMounted` 或 `mounted` 钩子中访问 Browser / DOM API。
 
-如果你正在使用或演示非 SSR 友好的组件（例如包含了自定义指令），则可以将它们包装在内置的 `<ClientOnly>` 组件中：
+如果你正在使用或演示非 SSR 友好的组件（比如说包含了自定义指令），则可以将它们包装在内置的 `<ClientOnly>` 组件中：
 
 ``` md
 <ClientOnly>
@@ -12,7 +12,7 @@
 </ClientOnly>
 ```
 
-请注意，这不会修复 **在 import** 上访问浏览器 API 的组件或库 - 为了使用在导入时使用浏览器环境的代码，你需要将它们动态地导入到正确的生命周期钩子中：
+请注意，这不会修复**在 import** 时访问浏览器 API 的组件或库的问题 - 为了使用在导入时使用浏览器环境的代码，你需要将它们动态地导入到合适的生命周期钩子中：
 
 ``` vue
 <script>
@@ -58,7 +58,7 @@ export default {
 
 ### 访问网站和页面数据
 
-已编译的组件没有任何私有数据，但可以访问[站点元数据](./custom-themes.md#site-and-page-metadata)。例如：
+已编译的组件没有任何私有数据，但可以访问[网站元数据](./custom-themes.md#site-and-page-metadata)。例如：
 
 **输入**
 
@@ -118,12 +118,12 @@ export default {
 <OtherComponent/>
 
 ::: warning 重要的
-确保自定义组件的名称包含连字符或位于 PascalCase 中。否则，它将被视为内联元素，并被包裹在一个 `<p>` 标签内，这将导致 hydration 不匹配，因为 `<p>` 不允许块元素放置在其中。
+确保自定义组件的名称包含连字符或符合 PascalCase 命名规则。否则，它将被视为内联元素，并被包裹在一个 `<p>` 标签内，这将导致 hydration （Vue 的渲染子过程）不匹配，因为 `<p>` 不允许块元素放置在其中。
 :::
 
 ## 脚本和样式提升（Script & Style Hoisting）
   
-有时你可能需要将一些 JavaScript 或 CSS 仅应用于当前页面。在这些情况下，你可以在 markdown 文件中直接编写根级别的 `<script>` 和 `<style>` 块，并将它们从编译的 HTML 中提取出来，并用作 `<script>` 和 `<style>` 生成 Vue 单个文件组件块。
+有时你可能需要将一些 JavaScript 或 CSS 仅应用于当前页面。在这些情况下，你可以在 markdown 文件中直接编写原生的 `<script>` 和 `<style>` 块，并将它们从编译的 HTML 中提取出来，以 `<script>` 和 `<style>` 的形式插入到生成 Vue 单个文件组件中。
 
 <p class="demo" :class="$style.example"></p>
 
