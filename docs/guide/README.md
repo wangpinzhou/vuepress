@@ -1,14 +1,14 @@
 # 介绍
 
-VuePress 由两部分组成：一个带有强大 Vue 主题系统的简约静态网站生成器，以及为编写技术文档而优化的默认主题。它是为了支持 Vue 子项目的文档需求而创建的。
+VuePress 由两部分组成：一个带有强大 Vue 主题系统的简约静态网站生成器，和一个为编写技术文档而优化的默认主题。它是为了支持 Vue 子项目的文档需求而创建的。
 
-由 VuePress 生成的每个页面都有自己的预渲染静态 HTML，它们能提供出色的加载性能，并且对 SEO 友好。然而，一旦页面被加载，Vue 就会接管静态内容并将其转换为完整的单页面应用程序（SPA）。当用户在站点周围导航时，可以根据需要提取其他页面。
+由 VuePress 生成的每个页面都有自己的预渲染静态 HTML，它们能提供出色的加载性能，并且对 SEO 友好。然而，一旦页面被加载，Vue 就会接管静态内容并将其转换为完整的单页面应用程序（SPA）。当用户在浏览站点时，可以按需加载其他页面。
 
 ## 运行原理（How It Works）
 
-VuePress 网站实际上是由 [Vue](http://vuejs.org/)，[Vue Router](https://github.com/vuejs/vue-router) 和 [webpack](http://webpack.js.org/) 制作的 SPA。如果你以前使用过 Vue，那么在编写或开发自定义主题时（甚至可以使用 Vue DevTools 来调试你的自定义主题！），你会感受到熟悉的开发经验！
+VuePress 网站实际上是由 [Vue](http://vuejs.org/)，[Vue Router](https://github.com/vuejs/vue-router) 和 [webpack](http://webpack.js.org/) 制作的 SPA。如果你以前使用过 Vue，那么在编写或开发自定义主题时（甚至可以使用 Vue DevTools 来调试你的自定义主题！），你会感受到熟悉的开发体验！
 
-在构建过程中，我们创建应用程序的服务器渲染版本，并通过虚拟访问每条路线来渲染相应的 HTML。这种方式受到 [Nuxt](https://nuxtjs.org/) 的 `nuxt generate` 命令以及 [Gatsby](https://www.gatsbyjs.org/) 等其他项目的启发。
+在构建过程中，我们会创建应用程序的服务器渲染版本，并通过实际上访问的每个路由来渲染相应的 HTML。这种方式受到 [Nuxt](https://nuxtjs.org/) 的 `nuxt generate` 命令以及 [Gatsby](https://www.gatsbyjs.org/) 等其他项目的启发。
 
 每个 markdown 文件都使用 [markdown-it](https://github.com/markdown-it/markdown-it) 编译为 HTML，然后作为 Vue 组件的模板进行处理。这允许你直接在 markdown 文件中使用 Vue，并且在需要嵌入动态内容时非常有用。
 
@@ -22,13 +22,13 @@ VuePress 网站实际上是由 [Vue](http://vuejs.org/)，[Vue Router](https://g
 - 一个默认主题：
   - 响应式布局
   - 可选的主页
-  - 简单的现成基于标题的搜索功能
-  - 可定制的导航栏和边栏
+  - 简单且开箱即用的基于标题的搜索功能
+  - 可定制的导航栏和侧边栏
   - 自动生成的 GitHub 链接和页面编辑链接
 
 ## Todo 特性
 
-VuePress仍在进行中。有几件事目前不支持但计划做：
+VuePress 的开发仍在进行中。有几件事目前不支持但计划做：
 
 - 在 Navbar 中能够下拉项
 - 多语言支持
