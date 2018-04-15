@@ -2,7 +2,7 @@ const base = process.env.GH ? '/vuepress/' : '/'
 
 module.exports = {
   title: 'VuePress',
-  description: 'Vue 驱动静态站点生成工具',
+  description: 'Vue 驱动的静态站点生成工具',
   dest: 'vuepress',
   base,
   head: [
