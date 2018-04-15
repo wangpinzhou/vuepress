@@ -55,7 +55,7 @@ export default {
         repo,
         editLinks,
         docsDir = '',
-        docsBranch = 'master'
+        docsBranch = 'cn'
       } = this.$site.themeConfig
 
       let path = normalize(this.$page.path)
