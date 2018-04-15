@@ -1,7 +1,7 @@
 # 自定义主题
 
 ::: tip 提示
-主题组件同样受到的[浏览器 API 访问限制](./using-vue.md#browser-api-access-restrictions)的限制。
+主题组件同样受到[浏览器 API 访问限制](./using-vue.md#browser-api-access-restrictions)。
 :::
 
 VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局，请在文档根目录下创建一个 `.vuepress/theme` 目录，然后创建一个 `Layout.vue` 文件：
@@ -13,7 +13,7 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
       └─ Layout.vue
 ```
 
-这儿和开发一个正常的 Vue 应用程序是一样的。这完全取决于你如何组织你的主题。
+这儿和开发一个正常的 Vue 应用程序是一样的。完全取决于你如何组织你的主题。
 
 ## 网站和网页元数据（Site and Page Metadata）
 
