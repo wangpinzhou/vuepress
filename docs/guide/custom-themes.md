@@ -79,3 +79,9 @@ module.exports = {
 ```
 
 VuePress 将尝试定位并使用 `node_modules/vuepress-theme-awesome/Layout.vue`。
+
+***
+
+> 原文：[https://vuepress.vuejs.org/guide/custom-themes.html](https://vuepress.vuejs.org/guide/custom-themes.html)
+
+***

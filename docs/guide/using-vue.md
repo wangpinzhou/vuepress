@@ -122,7 +122,7 @@ export default {
 :::
 
 ## 脚本和样式提升（Script & Style Hoisting）
-  
+
 有时你可能需要将一些 JavaScript 或 CSS 仅应用于当前页面。在这些情况下，你可以在 markdown 文件中直接编写原生的 `<script>` 和 `<style>` 块，并将它们从编译的 HTML 中提取出来，以 `<script>` 和 `<style>` 的形式插入到生成 Vue 单个文件组件中。
 
 <p class="demo" :class="$style.example"></p>
@@ -141,3 +141,9 @@ export default {
   }
 }
 </script>
+
+***
+
+> 原文：[https://vuepress.vuejs.org/guide/using-vue.html](https://vuepress.vuejs.org/guide/using-vue.html)
+
+***

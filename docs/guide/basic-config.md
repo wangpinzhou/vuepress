@@ -22,3 +22,9 @@ module.exports = {
 VuePress 主题负责你网站的所有布局和交互细节。VuePress 附带一个默认主题（你现在正在查看的），它是专门为技术文档设计的。它公开了许多选项，且允许你自定义导航栏，侧边栏和主页等。有关详细信息，请查看[默认主题配置](../default-theme-config/)页面。
 
 如果你想开发自定义主题，请参考[自定义主题](./custom-themes.md)。
+
+***
+
+> 原文：[https://vuepress.vuejs.org/guide/basic-config.html](https://vuepress.vuejs.org/guide/basic-config.html)
+
+***

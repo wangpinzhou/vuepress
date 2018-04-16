@@ -44,3 +44,9 @@ git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
   - **发布目录：** `docs/.vuepress/dist`
 
 3. 点击部署按钮！
+
+***
+
+> 原文：[https://vuepress.vuejs.org/guide/deploy.html](https://vuepress.vuejs.org/guide/deploy.html)
+
+***

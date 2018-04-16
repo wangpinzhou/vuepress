@@ -48,3 +48,9 @@ module.exports = {
 请注意，你不仅可以在主题组件中使用上述语法，还可以在 markdown 文件中使用上述语法。
 
 另外，如果设置了 `base`，它会自动作为前缀拼接到 `.vuepress/config.js` 选项中的所有静态资源 URL 中。
+
+***
+
+> 原文：[https://vuepress.vuejs.org/guide/assets.html](https://vuepress.vuejs.org/guide/assets.html)
+
+***

@@ -11,9 +11,9 @@ sidebar: auto
 - Type: `string`
 - Default: `/`
 
-网站将在其部署的基本 URL。如果您打算在子路径下部署您的站点，例如 GitHub 页面，则需要设置此项。如果您打算将您的网站部署到`https://foo.github.io/bar/`，则应将 `base` 设置为 `"/bar/"`。它应该始终以斜杠开始和结束。
+网站将在其部署的基本 URL。如果你打算在子路径下部署你的站点，例如 GitHub 页面，则需要设置此项。如果你打算将你的网站部署到`https://foo.github.io/bar/`，则应将 `base` 设置为 `"/bar/"`。它应该始终以斜杠开始和结束。
 
-在其他选项中，`base` 会自动添加到以 `/` 开头的所有 URL 中，因此您只需指定一次即可。
+在其他选项中，`base` 会自动添加到以 `/` 开头的所有 URL 中，因此你只需指定一次即可。
 
 **另请参阅：**
 
@@ -86,9 +86,9 @@ module.exports = {
 - `sw-error`
 
 ::: tip PWA 注意事项
-`serviceWorker` 选项只能处理 service worker。要使您的站点完全符合 PWA，您需要在`.vuepress/public` 中提供 Web App 清单和图标。有关更多详细信息，请参阅 [MDN 关于 Web 应用程序清单的文档](https://developer.mozilla.org/en-US/docs/Web/Manifest)。
+`serviceWorker` 选项只能处理 service worker。要使你的站点完全符合 PWA，你需要在`.vuepress/public` 中提供 Web App 清单和图标。有关更多详细信息，请参阅 [MDN 关于 Web 应用程序清单的文档](https://developer.mozilla.org/en-US/docs/Web/Manifest)。
 
-此外，只有在您能够使用 SSL 部署您的站点时才能启用此功能，因为 service worker 只能在 HTTPs URLs 下注册。
+此外，只有在你能够使用 SSL 部署你的站点时才能启用此功能，因为 service worker 只能在 HTTPs URLs 下注册。
 :::
 
 ## 主题化（Theming）
@@ -105,7 +105,7 @@ module.exports = {
 - Type: `Object`
 - Default: `{}`
 
-为使用的主题提供配置选项。这些选项将根据您使用的主题而有所不同。
+为使用的主题提供配置选项。这些选项将根据你使用的主题而有所不同。
 
 **另请参阅：**
 
@@ -192,4 +192,10 @@ module.exports = {
 - Type: `boolean`
 - Default: `false`
 
-如果您只针对常青树浏览器，请设置为 `true` 。这将禁用 IE5 的 ES5 转码和 polyfill，导致更快的构建和更小的文件。
+如果你只针对常青树浏览器，请设置为 `true` 。这将禁用 IE5 的 ES5 转码和 polyfill，导致更快的构建和更小的文件。
+
+***
+
+> 原文：[https://vuepress.vuejs.org/config/](https://vuepress.vuejs.org/config/)
+
+***
