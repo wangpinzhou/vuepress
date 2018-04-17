@@ -80,9 +80,9 @@ module.exports = {
 
 VuePress 将尝试定位并使用 `node_modules/vuepress-theme-awesome/Layout.vue`。
 
-## customizing the default theme
+## 自定义默认主题
 
-The `vuepress eject [targetDir]` command will copy the default theme source code into `.vuepress/theme` to allow complete customization. Note, however, once you eject, you are on your own and won't be receiving future updates or bug fixes to the default theme even if you upgrade VuePress.
+`vuepress eject [targetDir]` 命令会将默认主题的源代码复制到 `.vuepress/theme` 中，来允许彻底的自定义。但是请注意，一旦你 eject，即使你升级 VuePress 版本，你这仍然是自己的主题，并且不会收到对默认主题的未来更新或错误修复。
 
 ***
 
