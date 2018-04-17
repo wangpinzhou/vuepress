@@ -1,8 +1,20 @@
 #!/usr/bin/env node
 
-const path = require('path')
 const chalk = require('chalk')
-const { dev, build } = require('../lib')
+const semver = require('semver')
+const requiredVersion = require('../package.json').engines.node
+
+if (!semver.satisfies(process.version, requiredVersion)) {
+  console.log(chalk.red(
+    `\n[vuepress] minimum Node version not met:` +
+    `\nYou are using Node ${process.version}, but VuePress ` +
+    `requires Node ${requiredVersion}.\nPlease upgrade your Node version.\n`
+  ))
+  process.exit(1)
+}
+
+const path = require('path')
+const { dev, build, eject } = require('../lib')
 
 const program = require('commander')
 
@@ -25,6 +37,13 @@ program
   .option('--debug', 'build in development mode for debugging')
   .action((dir = '.', { debug, outDir }) => {
     wrapCommand(build)(path.resolve(dir), { debug, outDir })
+  })
+
+program
+  .command('eject [targetDir]')
+  .description('copy the default theme into .vuepress/theme for customization.')
+  .action((dir = '.') => {
+    wrapCommand(eject)(path.resolve(dir))
   })
 
 // output help information on unknown commands

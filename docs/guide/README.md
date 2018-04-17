@@ -30,14 +30,13 @@ VuePress 网站实际上是由 [Vue](http://vuejs.org/), [Vue Router](https://gi
 
 VuePress 的开发仍在进行中。有几件目前不支持，但计划做的功能：
 
-- Navbar 中的下拉项(dropdown)
 - 多语言支持
 - Algolia DocSearch 集成
 - 博客支持
 
 欢迎贡献！
 
-## 为什么不使用下面这些工具？(why not ...?)
+## 为什么不使用下面这些工具？
 
 ### Nuxt
 

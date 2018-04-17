@@ -1,10 +1,6 @@
 <template>
   <div class="theme-container"
-    :class="{
-      'no-navbar': !shouldShowNavbar,
-      'sidebar-open': isSidebarOpen,
-      'no-sidebar': !shouldShowSidebar
-    }"
+    :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd">
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
@@ -24,7 +20,7 @@ import Home from './Home.vue'
 import Navbar from './Navbar.vue'
 import Page from './Page.vue'
 import Sidebar from './Sidebar.vue'
-import { pathToComponentName, getTitle, getLang } from '../app/util'
+import { pathToComponentName, getTitle, getLang } from '@app/util'
 import { resolveSidebarItems } from './util'
 
 export default {
@@ -63,6 +59,17 @@ export default {
         this.$route,
         this.$site
       )
+    },
+    pageClasses() {
+      const userPageClass = this.$page.frontmatter.pageClass
+      return [
+        {
+          'no-navbar': !this.shouldShowNavbar,
+          'sidebar-open': this.isSidebarOpen,
+          'no-sidebar': !this.shouldShowSidebar,
+        },
+        userPageClass
+      ]
     }
   },
 

@@ -4,7 +4,7 @@ sidebar: auto
 
 # 配置参考
 
-## 基本配置（Basic Config）
+## 基本配置(basic config)
 
 ### base
 
@@ -91,7 +91,7 @@ module.exports = {
 此外，只有在你能够使用 SSL 部署你的站点时才能启用此功能，因为 service worker 只能在 HTTPs URLs 下注册。
 :::
 
-## 主题化（Theming）
+## 主题化(theming)
 
 ### theme
 
@@ -113,19 +113,26 @@ module.exports = {
 
 ## Markdown
 
+### markdown.slugify
+
+- Type: `Function`
+- Default: [source](https://github.com/vuejs/vuepress/blob/master/lib/markdown/slugify.js)
+
+Function for transforming header texts into slugs. This affects the ids/links generated for header anchors, table of contents and sidebar links.
+
 ### markdown.anchor
 
 - Type: `Object`
 - Default: `{ permalink: true, permalinkBefore: true, permalinkSymbol: '#' }`
 
-[markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 的选项。
+[markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 的选项。(Note: prefer `markdown.slugify` if you want to customize header ids.)
 
 ### markdown.toc
 
 - Type: `Object`
 - Default: `{ includeLevel: [2, 3] }`
 
-[markdown-it-table-of-contents](https://github.com/Oktavilla/markdown-it-table-of-contents) 的选项。
+[markdown-it-table-of-contents](https://github.com/Oktavilla/markdown-it-table-of-contents) 的选项。(Note: prefer `markdown.slugify` if you want to customize header ids.)
 
 ### markdown.config
 
@@ -144,7 +151,7 @@ module.exports = {
 }
 ```
 
-## 建立管道（Build Pipeline）
+## 建立管道(build pipeline)
 
 ### postcss
 
@@ -185,7 +192,7 @@ module.exports = {
 }
 ```
 
-## 浏览器兼容性（Browser Compatibility）
+## 浏览器兼容性(browser compatibility)
 
 ### evergreen
 

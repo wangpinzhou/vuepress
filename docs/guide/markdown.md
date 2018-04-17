@@ -6,11 +6,11 @@ meta:
 
 # Markdown 拓展
 
-## 标题锚（Header Anchors）
+## 标题锚(header anchors)
 
 标题会自动获取锚链接。可以使用 [`markdown.anchor`](../config/#markdownanchor)  选项来配置锚点的渲染。
 
-## 链接（Links）
+## 链接(links)
 
 - 以 `.md` 或 `.html` 结尾的入站链接转换为 `<router-link>` 进行 SPA 导航。
 
@@ -79,7 +79,7 @@ meta:
 
 :tada: :100:
 
-## 目录（Table of Contents）
+## 目录(table of contents)
 
 **输入**
 
@@ -93,7 +93,7 @@ meta:
 
 可以使用 [`markdown.toc`](../config/#markdowntoc) 选项配置 TOC 的渲染。
 
-## 自定义容器（Custom Containers）
+## 自定义容器(custom containers)
 
 **输入**
 
@@ -137,7 +137,7 @@ Danger zone, do not proceed
 Danger zone, do not proceed
 :::
 
-## 在代码块中高亮显示行（Line Highlighting in Code Blocks）
+## 在代码块中高亮显示行(line highlighting in code blocks)
 
 **输入**
 
@@ -165,7 +165,7 @@ export default {
 }
 ```
 
-## 高级配置（Advanced Configuration）
+## 高级配置(advanced configuration)
 
 VuePress 使用 [markdown-it](https://github.com/markdown-it/markdown-it)作为 markdwon 渲染器。上面的许多扩展都是通过定制插件实现的。你可以使用 `.vuepress/config.js` 中的 `markdown` 选项进一步自定义 `markdown-it` 实例：
 

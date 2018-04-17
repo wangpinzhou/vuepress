@@ -15,7 +15,7 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 
 这儿和开发一个正常的 Vue 应用程序是一样的。完全取决于你如何组织你的主题。
 
-## 网站和网页元数据（Site and Page Metadata）
+## 网站和网页元数据(site and page metadata)
 
 对于 `docs` 中的每个 `.md` 文件，`Layout`组件将只被调用一次，并且整个站点和该特定页面的元数据将分别暴露为 `this.$site` 和 `this.$page` 属性被注入到应用程序中的每个组件里。
 
@@ -37,7 +37,7 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 }
 ```
 
-`title`，`description` 和 `base` 从 `.vuepress/config.js` 中的相应字段复制而来。 `pages` 包含每个页面的元数据对象数组，包括其路径，页面标题（在 YAML frontmatter 中显式指定或从页面上的第一个标题推断）以及该文件中的任意 YAML frontmatter 数据。
+`title`，`description` 和 `base` 从 `.vuepress/config.js` 中的相应字段复制而来。 `pages` 包含每个页面的元数据对象数组，包括其路径，页面标题（在 [YAML front matter](./markdown.html#yaml-front-matter) 中显式指定或从页面上的第一个标题推断）以及该文件中的任意 YAML frontmatter 数据。
 
 这是你正在查看的此页面的 `$page` 对象：
 
@@ -54,7 +54,7 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 
 最后，别忘了 `this.$route` 和 `this.$router` 也可作为 Vue Router API 的一部分。
 
-## 内容出口（Content Outlet）
+## 内容出口(content outlet)
 
 所渲染的当前 `.md` 文件的编译内容将作为特殊的 `<Content/>` 全局组件来使用。你需要将其呈现在布局的某个位置以显示页面的内容。最简单的主题可以是一个带有以下内容的 `Layout.vue` 组件：
 
@@ -66,7 +66,7 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 </template>
 ```
 
-## 使用来自依赖项的主题（Using Theme from a Dependency）
+## 使用来自依赖项的主题(using theme from a dependency)
 
 主题可以在 npm 上以原始 Vue SFC 格式发布为 `vuepress-theme-xxx`。
 
@@ -79,6 +79,10 @@ module.exports = {
 ```
 
 VuePress 将尝试定位并使用 `node_modules/vuepress-theme-awesome/Layout.vue`。
+
+## customizing the default theme
+
+The `vuepress eject [targetDir]` command will copy the default theme source code into `.vuepress/theme` to allow complete customization. Note, however, once you eject, you are on your own and won't be receiving future updates or bug fixes to the default theme even if you upgrade VuePress.
 
 ***
 

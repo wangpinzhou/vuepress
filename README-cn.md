@@ -28,7 +28,6 @@ https://vuepress.vuejs.org/
 
 VuePress is still a work in progress. There are a few things that it currently does not support but are planned:
 
-- Dropdown Items in Navbar
 - Multi-Language Support
 - Algolia DocSearch Integration
 - Blogging support
@@ -37,9 +36,11 @@ Contributions are welcome!
 
 ## Development
 
+> Please make sure your version of Node.js is greater than 8.
+
 ``` bash
-npm install
-npm run dev # serves VuePress' own docs with itself
+yarn
+yarn dev # serves VuePress' own docs with itself
 ```
 
 ## License

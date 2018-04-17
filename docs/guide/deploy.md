@@ -33,14 +33,14 @@ git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 ``` json
 {
   "scripts": {
-    "build-docs": "vuepress build docs"
+    "docs:build": "vuepress build docs"
   }
 }
 ```
 
 2. 在 Netlify 上，使用以下设置从 GitHub 创建一个新项目：
 
-  - **构建命令：** `npm run build-docs` or `yarn build-docs`
+  - **构建命令：** `npm run docs:build` or `yarn docs:build`
   - **发布目录：** `docs/.vuepress/dist`
 
 3. 点击部署按钮！

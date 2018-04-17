@@ -26,7 +26,7 @@ export default {
 </script>
 ```
 
-## 模板（Templating）
+## 模板(templating)
 
 ### 插值
 
@@ -76,7 +76,7 @@ export default {
 }
 ```
 
-## 转义（Escaping）
+## 转义(escaping)
 
 默认情况下，fenced 代码块会自动用 `v-pre` 包装。如果要在内联代码片段或纯文本内显示原始插值或特定于 Vue 的语法，则需要用 `v-pre` 自定义容器包装段落：
 
@@ -121,7 +121,7 @@ export default {
 确保自定义组件的名称包含连字符或符合 PascalCase 命名规则。否则，它将被视为内联元素，并被包裹在一个 `<p>` 标签内，这将导致 hydration （Vue 的渲染子过程）不匹配，因为 `<p>` 不允许块元素放置在其中。
 :::
 
-## 脚本和样式提升（Script & Style Hoisting）
+## 脚本和样式提升(script & style hoisting)
 
 有时你可能需要将一些 JavaScript 或 CSS 仅应用于当前页面。在这些情况下，你可以在 markdown 文件中直接编写原生的 `<script>` 和 `<style>` 块，并将它们从编译的 HTML 中提取出来，以 `<script>` 和 `<style>` 的形式插入到生成 Vue 单个文件组件中。
 

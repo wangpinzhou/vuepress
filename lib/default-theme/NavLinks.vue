@@ -1,11 +1,15 @@
 <template>
   <nav class="nav-links" v-if="userLinks.length || githubLink">
     <!-- user links -->
-    <router-link v-for="item in userLinks"
-      :to="item.link"
+    <div
+      class="nav-item"
+      v-for="item in userLinks"
       :key="item.link">
-      {{ item.text }}
-    </router-link>
+      <dropdown-link
+        v-if="item.type === 'links'"
+        :item="item"></dropdown-link>
+      <nav-link v-else :item="item"></nav-link>
+    </div>
     <!-- github link -->
     <a v-if="githubLink"
       :href="githubLink"
@@ -20,15 +24,18 @@
 
 <script>
 import OutboundLink from './OutboundLink.vue'
-import { isActive, ensureExt } from './util'
+import { isActive, resolveNavLinkItem } from './util'
+import NavLink from './NavLink.vue'
+import DropdownLink from './DropdownLink.vue'
 
 export default {
-  components: { OutboundLink },
+  components: { OutboundLink, NavLink, DropdownLink },
   computed: {
     userLinks () {
-      return (this.$site.themeConfig.nav || []).map(item => ({
-        text: item.text,
-        link: ensureExt(item.link)
+      return (this.$site.themeConfig.nav || []).map((link => {
+        return Object.assign(resolveNavLinkItem(link), {
+          items: (link.items || []).map(resolveNavLinkItem)
+        })
       }))
     },
     githubLink () {
@@ -52,21 +59,30 @@ export default {
 .nav-links
   display inline-block
   a
-    color inherit
-    font-weight 500
     line-height 1.25rem
-    margin-left 1.5rem
+    color inherit
     &:hover, &.router-link-active
       color $accentColor
+  .nav-item
+    cursor: pointer
+    position relative
+    display inline-block
+    margin-left 1.5rem
+    font-weight 500
+    line-height 2rem
+  .github-link
+    margin-left 1.5rem
 
 @media (max-width: $MQMobile)
-  .nav-links a
-    margin-left 0
+  .nav-links
+    .nav-item, .github-link
+      margin-left 0
 
 @media (min-width: $MQMobile)
-  .nav-links a
-    &:hover, &.router-link-active
-      color $textColor
-      margin-bottom -2px
-      border-bottom 2px solid lighten($accentColor, 5%)
+  .nav-links
+    a
+      &:hover, &.router-link-active
+        color $textColor
+        margin-bottom -2px
+        border-bottom 2px solid lighten($accentColor, 5%)
 </style>

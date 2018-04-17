@@ -1,15 +1,15 @@
 # 起步
 
-## 全局安装（Global Installation）
+## 全局安装
 
-如果你只是想玩玩 VuePress，你可以在全局安装它：
+如果你只是想随便用下 VuePress，你可以在全局安装它：
 
 ``` bash
 # 全局安装
 npm install -g vuepress
 
 # 创建一个 markdown 文件
-echo "# Hello VuePress" > README.md
+echo '# Hello VuePress' > README.md
 
 # 开始编写文档
 vuepress dev
@@ -18,9 +18,9 @@ vuepress dev
 vuepress build
 ```
 
-## 在已有项目中（Inside an Existing Project）
+## 在已有项目中安装
 
-如果你在一个已有项目中期望保存当前文档，就应该将 VuePress 安装为本地依赖项。此设置还允许你使用 CI 或 Netlify 等服务在推送时自动部署。
+如果你想要在一个已有项目中维护文档，就应该将 VuePress 安装为本地依赖。此设置还允许你使用 CI 或 Netlify 服务，在推送时自动部署。
 
 ``` bash
 # 安装为本地依赖项
@@ -29,13 +29,13 @@ npm install -D vuepress
 # 创建一个 docs 目录
 mkdir docs
 # 创建一个 markdown 文件
-echo "# Hello VuePress!" > docs/README.md
+echo '# Hello VuePress' > docs/README.md
 
 # 开始编写文档
 npx vuepress dev docs
 ```
 
-或者, 给 `package.json` 添加一些脚本：
+或者，给 `package.json` 添加一些 scripts 脚本：
 
 ``` json
 {
@@ -46,7 +46,7 @@ npx vuepress dev docs
 }
 ```
 
-然后你就可以开始写文档了：
+然后你就可以开始编写文档了：
 
 ``` bash
 npm run docs:dev
@@ -58,7 +58,7 @@ npm run docs:dev
 npm run docs:build
 ```
 
-默认情况下，构建的文件将位于 `.vuepress/dist` 中，该文件可以通过 `.vuepress/config.js` 中的 `dest` 字段进行配置。构建的文件可以部署到任何静态文件服务器。有关部署到常用服务的指南，请参考[部署教程](./deploy.md)。
+默认情况下，构建的文件会位于 `.vuepress/dist` 中，该文件可以通过 `.vuepress/config.js` 中的 `dest` 字段进行配置。构建的文件可以部署到任何静态文件服务器。关于如何部署到一些常用服务，请参考 [部署指南](./deploy.md)。
 
 ***
 

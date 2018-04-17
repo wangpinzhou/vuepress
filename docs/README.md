@@ -20,7 +20,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 npm install -g vuepress
 
 # 创建一个 markdown 文件
-echo "# Hello VuePress" > README.md
+echo '# Hello VuePress' > README.md
 
 # 开始编写文档
 vuepress dev
@@ -28,3 +28,7 @@ vuepress dev
 # 构建为静态文件
 vuepress build
 ```
+
+::: warning Node.js 版本
+请确保你的 Node.js 版本大于等于 8。
+:::
