@@ -118,21 +118,21 @@ module.exports = {
 - Type: `Function`
 - Default: [source](https://github.com/vuejs/vuepress/blob/master/lib/markdown/slugify.js)
 
-将标题文本转换为 slug 的函数。 这会影响标题锚，目录和侧边栏链接生成的 ids/links。（译者注：此功能是为了解决非 ASCII 码字符生成链接时的 [bug](https://github.com/vuejs/vuepress/issues/45)，具体代码查看 /lib/markdown/slugify 的 slugify 函数）
+将标题文本转换为别名(slug)的函数。这会影响标题锚点、目录和侧边栏链接生成的 id 和链接。（译者注：此功能是为了解决非 ASCII 码字符生成链接时的 [bug](https://github.com/vuejs/vuepress/issues/45)，具体代码查看 /lib/markdown/slugify 的 slugify 函数）
 
 ### markdown.anchor
 
 - Type: `Object`
 - Default: `{ permalink: true, permalinkBefore: true, permalinkSymbol: '#' }`
 
-[markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 的选项。(注意：如果你想自定义标题 id 的话推荐 `markdown.slugify`。)
+[markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 的选项。(注意：如果你想自定义标题 id 的话尽量使用 `markdown.slugify`。)
 
 ### markdown.toc
 
 - Type: `Object`
 - Default: `{ includeLevel: [2, 3] }`
 
-[markdown-it-table-of-contents](https://github.com/Oktavilla/markdown-it-table-of-contents) 的选项。(注意：如果你想自定义标题 id 的话推荐 `markdown.slugify`。)
+[markdown-it-table-of-contents](https://github.com/Oktavilla/markdown-it-table-of-contents) 的选项。(注意：如果你想自定义标题 id 的话尽量使用 `markdown.slugify`。)
 
 ### markdown.config
 
