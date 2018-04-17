@@ -10,28 +10,28 @@ sidebar: auto
 
 ## 主页(Homepage)
 
-默认主题提供了一个主页布局（用于[该网站的主页](/)）。要使用它，需要在你的根目录 `README.md` 的 [YAML front matter](../guide/markdown.html#yaml-front-matter) 中指定 `home：true` 加上一些其他元数据。这是本网站使用的实际数据：
+默认主题提供了一个主页布局（用于[该网站的主页](/)）。要使用它，需要在你的根目录 `README.md` 的 [YAML front matter](../guide/markdown.html#yaml-front-matter) 中指定 `home：true`，并加上一些其他的元数据。这是本网站使用的实际数据：
 
 ``` yaml
 ---
 home: true
 heroImage: /hero.png
-actionText: Get Started →
+actionText: 起步 →
 actionLink: /guide/
 features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+- title: 简洁优先
+  details: 对于以 markdown 为中心的项目结构，做最简化的配置，帮助你专注于编写文档。
+- title: Vue 驱动
+  details: 使用 Vue + webpack 开发环境，在 markdown 中使用 Vue 组件，并通过 Vue 开发自定义主题。
+- title: 性能出色
+  details: VuePress 将为每个页面生成预渲染的静态 HTML，每个页面加载之后，会作为单页面应用程序(SPA)运行。
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 ```
 
-`YAML front matter` 的内容之后的任意其他内容，将被解析为正常 markdown，并在特性部分之后渲染。
+`YAML front matter` 的内容之后的其他任意内容，将被解析为正常 markdown，并在 features 部分之后渲染。
 
-If you want to use a completely custom homepage layout, you can also use a [Custom Layout](#custom-layout-for-specific-pages).
+如果您想使用完全自定义的主页布局，您还可以使用[自定义布局](#custom-layout-for-specific-pages)
 
 ## 导航链接(navbar links)
 
@@ -50,7 +50,7 @@ module.exports = {
 }
 ```
 
-These links can also be dropdown menus if you provide an array of `items` instead of a `link`:
+如果你提供一个 `items` 而不是 `link` 的数组，这些链接也可以是下拉菜单：
 
 ```js
 module.exports = {
@@ -68,7 +68,7 @@ module.exports = {
 }
 ```
 
-In addition, you can have sub groups inside a dropdown by having nested items:
+另外，您可以通过嵌套的 items 在下拉菜单中设置子分组：
 
 ```js
 module.exports = {
@@ -117,9 +117,9 @@ sidebarDepth: 2
 ---
 ```
 
-### 侧边栏组(sidebar groups)
+### 侧边栏分组(sidebar groups)
 
-你可以使用对象将侧边栏链接分成多个组：
+你可以使用对象将侧边栏链接分成多个分组：
 
 ``` js
 // .vuepress/config.js
@@ -142,11 +142,11 @@ module.exports = {
 }
 ```
 
-侧边栏组默认情况下是可折叠的。你可以强制一个组始终以 `collapsable：false` 打开。
+侧边栏分组默认情况下是可折叠的。你可以强制一个分组始终以 `collapsable：false` 打开。
 
 ### 多个侧边栏(multiple sidebars)
 
-如果你希望为不同的页面组显示不同的侧边栏，请先将页面组织到目录中：
+如果你希望为不同的页面分组显示不同的侧边栏，请先将页面组织到目录中：
 
 ```
 .
@@ -187,7 +187,7 @@ module.exports = {
 
 ### 单页自动补充工具栏(auto sidebar for single pages)
 
-如果你希望自动生成仅包含当前页面的标题链接的侧边栏，则可以在该页面上使用  `YAML front matter`：
+如果你希望自动生成仅包含当前页面的标题链接的侧边栏，可以在该页面上使用  `YAML front matter`：
 
 ``` yaml
 ---
@@ -205,7 +205,7 @@ sidebar: false
 ---
 ```
 
-## 上一页/下一页链接(prev / next links)
+## 上一页/下一页链接(prev/next links)
 
 根据激活页面的侧边栏顺序自动推断上一个和下一个链接。你也可以使用 `YAML front matter` 来显式覆盖或禁用它们：
 
@@ -238,7 +238,7 @@ module.exports = {
 
 ## 简单的 CSS 覆盖
 
-如果你希望对默认主题的样式应用简单覆盖，则可以创建一个 `.vuepress/override.styl` 文件。 这是 [Stylus](http://stylus-lang.com/) 文件，但你也可以使用普通的 CSS 语法。
+如果你希望对默认主题的样式应用简单的覆盖，可以创建一个 `.vuepress/override.styl` 文件。 这是 [Stylus](http://stylus-lang.com/) 文件，但你也可以使用普通的 CSS 语法。
 
 有几个颜色变量可以调整：
 
@@ -250,9 +250,9 @@ $borderColor = #eaecef
 $codeBgColor = #282c34
 ```
 
-## custom page class
+## 自定义页面的 class
 
-Sometimes, you may need to add a unique class for a specific page so that you can target content on that page only in custom CSS. You can add a class to the theme container div with `pageClass` in `YAML front matter`:
+有时，你可能需要为特定的页面添加一个唯一的 class，以便你只能在自定义 CSS 中定位该页面上的内容。 你可以在 `YAML front matter` 中用 `pageClass` 在主题的容器 div 中添加一个 class：
 
 ``` yaml
 ---
@@ -260,11 +260,11 @@ pageClass: custom-page-class
 ---
 ```
 
-Then you can write CSS targeting that page only:
+然后你就可以只编写针对该页面的 CSS：
 
 ``` css
 .theme-container.custom-page-class {
-  /* page-specific rules */
+  /* 指定页面的规则 */
 }
 ```
 
@@ -282,7 +282,7 @@ layout: SpecialLayout
 
 ## Ejecting
 
-You can copy the default theme source code into `.vuepress/theme` to fully customize the theme using the `vuepress eject [targetDir]` command. Note, however, once you eject, you are on your own and won't be receiving future updates or bug fixes to the default theme even if you upgrade VuePress.
+你可以将默认主题的源代码复制到 `.vuepress/theme` 中，来使用 `vuepress eject [targetDir]` 命令彻底自定义主题。但是请注意，一旦你 eject，即使你升级 VuePress 版本，你这仍然是自己的主题，并且不会收到对默认主题的未来更新或错误修复。
 
 ***
 
