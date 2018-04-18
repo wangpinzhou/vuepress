@@ -22,7 +22,7 @@ npm install -g vuepress
 # 创建一个 markdown 文件
 echo '# Hello VuePress' > README.md
 
-# 开始编写文档
+# 开始编写
 vuepress dev
 
 # 构建为静态文件
