@@ -31,7 +31,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 `YAML front matter` 的内容之后的其他任意内容，将被解析为正常 markdown，并在 features 部分之后渲染。
 
-如果你想使用完全自定义的主页布局，你还可以使用[自定义布局](#custom-layout-for-specific-pages)
+如果你想彻底自定义主页的布局，你还可以使用[自定义布局](#custom-layout-for-specific-pages)
 
 ## 导航链接(navbar links)
 
