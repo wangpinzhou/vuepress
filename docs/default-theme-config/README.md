@@ -19,19 +19,19 @@ heroImage: /hero.png
 actionText: 起步 →
 actionLink: /guide/
 features:
-- title: 简洁优先
-  details: 对于以 markdown 为中心的项目结构，做最简化的配置，帮助你专注于编写文档。
+- title: 简明优先
+  details: 对以 markdown 为中心的项目结构，做最简化的配置，帮助你专注于创作。
 - title: Vue 驱动
-  details: 使用 Vue + webpack 开发环境，在 markdown 中使用 Vue 组件，并通过 Vue 开发自定义主题。
-- title: 性能出色
-  details: VuePress 将为每个页面生成预渲染的静态 HTML，每个页面加载之后，会作为单页面应用程序(SPA)运行。
+  details: 享用 Vue + webpack 开发环境，在 markdown 中使用 Vue 组件，并通过 Vue 开发自定义主题。
+- title: 性能高效
+  details: VuePress 将每个页面生成为预渲染的静态 HTML，每个页面加载之后，然后作为单页面应用程序(SPA)运行。
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 ```
 
 `YAML front matter` 的内容之后的其他任意内容，将被解析为正常 markdown，并在 features 部分之后渲染。
 
-如果你想使用完全自定义的主页布局，你还可以使用[自定义布局](#custom-layout-for-specific-pages)
+如果你想彻底自定义主页的布局，你还可以使用[自定义布局](#custom-layout-for-specific-pages)
 
 ## 导航链接(navbar links)
 
@@ -252,7 +252,7 @@ $codeBgColor = #282c34
 
 ## 自定义页面的 class
 
-有时，你可能需要为特定的页面添加一个唯一的 class，以便你只在自定义 CSS 中定位该页面上的内容。 你可以在 `YAML front matter` 中用 `pageClass` 在主题的容器 div 中添加一个 class：
+有时，你可能需要为特定的页面添加一个唯一的 class，以便你只能在自定义 CSS 中定位该页面上的内容。 你可以在 `YAML front matter` 中用 `pageClass` 在主题的容器 div 中添加一个 class：
 
 ``` yaml
 ---
@@ -282,7 +282,7 @@ layout: SpecialLayout
 
 ## Ejecting
 
-你可以使用 `vuepress eject [targetDir]` 命令来复制默认主题的源码到 `.vuepress/theme` 来完全自定义主题.需要注意的是，一但你使用了该命令，即使是在未来更新 VuePress ，你也将不会收到默认主题的新特性和错误修复，而始终是你自己的主题版本。
+你可以将默认主题的源代码复制到 `.vuepress/theme` 中，来使用 `vuepress eject [targetDir]` 命令彻底自定义主题。但是请注意，一旦你 eject，即使你升级 VuePress 版本，你这仍然是自己的主题，并且不会收到对默认主题的未来更新或错误修复。
 
 ***
 
