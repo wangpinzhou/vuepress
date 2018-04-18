@@ -1,15 +1,14 @@
 module.exports = {
   dest: 'vuepress',
   langs: [
-    { lang: 'en', label: 'English', path: '/', selectText: 'Languages' },
-    { lang: 'zh-CN', label: '简体中文', path: '/zh/', selectText: '选择语言' }
+    { lang: 'zh-CN', label: '简体中文', path: '/', selectText: '选择语言' }
   ],
   title: {
     '/': 'VuePress',
     '/zh/': 'VuePress'
   },
   description: {
-    '/': 'Vue-powered Static Site Generator',
+    '/': 'Vue 驱动的静态站点生成工具',
     '/zh/': 'Vue 驱动的静态站点生成工具'
   },
   head: [
@@ -51,7 +50,7 @@ module.exports = {
       ]
     },
     sidebar: {
-      '/guide/': genSidebarConfig('Guide'),
+      '/guide/': genSidebarConfig('指南'),
       '/zh/guide/': genSidebarConfig('指南')
     }
   }
