@@ -96,7 +96,7 @@ export default {
 
 ## 使用组件（Using Components）
 
-`.vuepress / components` 中的任意 `* .vue` 文件都会自动注册为全局的异步组件。例如：
+`.vuepress / components` 中的任意 `* .vue` 文件都会自动注册为 [全局(global)](https://vuejs.org/v2/guide/components-registration.html#Global-Registration), [异步(async)](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components) 组件。例如：
 
 ```
 .

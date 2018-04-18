@@ -15,37 +15,37 @@
             class="dropdown-subitem"
             v-for="childSubItem in subItem.items"
             :key="childSubItem.link">
-            <nav-link :item="childSubItem"></nav-link>
+            <NavLink :item="childSubItem"/>
           </li>
         </ul>
-        <nav-link v-else :item="subItem"></nav-link>
+        <NavLink v-else :item="subItem"/>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-  import { isExternal, ensureExt } from './util'
-  import NavLink from './NavLink.vue'
+import { isExternal, ensureExt } from './util'
+import NavLink from './NavLink.vue'
 
-  export default {
-    components: { NavLink },
-    data() {
-      return {
-        open: false
-      }
-    },
-    props: {
-      item: {
-        required: true
-      }
-    },
-    methods: {
-      toggle() {
-        this.open = !this.open
-      }
+export default {
+  components: { NavLink },
+  data() {
+    return {
+      open: false
+    }
+  },
+  props: {
+    item: {
+      required: true
+    }
+  },
+  methods: {
+    toggle() {
+      this.open = !this.open
     }
   }
+}
 </script>
 
 <style lang="stylus">
@@ -57,7 +57,7 @@
       display inline-block
       vertical-align middle
       margin-top -1px
-      margin-left 6px
+      margin-left 0.4rem
       width 0
       height 0
       border-left 4px solid transparent
@@ -94,11 +94,11 @@
             width 0
             height 0
             border-left 5px solid $accentColor
-            border-top 4px solid transparent
-            border-bottom 4px solid transparent
+            border-top 3px solid transparent
+            border-bottom 3px solid transparent
             position absolute
-            top calc(50% - 3px)
-            left 10px
+            top calc(50% - 2px)
+            left 9px
       &:first-child h4
         margin-top 0
         padding-top 0
