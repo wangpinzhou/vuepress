@@ -1,12 +1,16 @@
 # 起步
 
+::: warning 兼容性注意事项
+VuePress 要求 Node.js >= 8。
+:::
+
 ## 全局安装
 
 如果你只是想随便用下 VuePress，你可以在全局安装它：
 
 ``` bash
 # 全局安装
-npm install -g vuepress
+yarn global add vuepress # 或 npm install -g vuepress
 
 # 创建一个 markdown 文件
 echo '# Hello VuePress' > README.md
@@ -24,18 +28,19 @@ vuepress build
 
 ``` bash
 # 安装为本地依赖项
-npm install -D vuepress
+yarn add -D vuepress # 或 npm install -D vuepress
 
 # 创建一个 docs 目录
 mkdir docs
 # 创建一个 markdown 文件
 echo '# Hello VuePress' > docs/README.md
-
-# 开始编写文档
-npx vuepress dev docs
 ```
 
-或者，给 `package.json` 添加一些 scripts 脚本：
+::: warning
+It is currently recommended to use [Yarn](https://yarnpkg.com/en/) instead of npm when installing VuePress into an existing project that has webpack 3.x as a dependency. Npm fails to generate the correct dependency tree in this case.
+:::
+
+然后，给 `package.json` 添加一些 scripts 脚本：
 
 ``` json
 {
@@ -46,16 +51,16 @@ npx vuepress dev docs
 }
 ```
 
-然后你就可以开始编写文档了：
+你现在就可以开始编写文档了：
 
 ``` bash
-npm run docs:dev
+yarn docs:dev # 或 npm run docs:dev
 ```
 
 要生成静态资源，请运行：
 
 ``` bash
-npm run docs:build
+yarn docs:build # 或 npm run docs:build
 ```
 
 默认情况下，构建的文件会位于 `.vuepress/dist` 中，该文件可以通过 `.vuepress/config.js` 中的 `dest` 字段进行配置。构建的文件可以部署到任何静态文件服务器。关于如何部署到一些常用服务，请参考 [部署指南](./deploy.md)。

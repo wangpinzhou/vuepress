@@ -1,14 +1,14 @@
 <template>
   <header class="navbar">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
-    <router-link to="/">
+    <router-link :to="$basepath" class="home-link">
       <img class="logo"
         v-if="$site.themeConfig.logo"
         :src="$withBase($site.themeConfig.logo)">
       <span class="site-name"
         v-if="$site.title"
         :class="{ 'can-hide': $site.themeConfig.logo }">
-        {{ $site.title }}
+        {{ $title }}
       </span>
     </router-link>
     <div class="links">
@@ -33,19 +33,17 @@ export default {
 
 .navbar
   padding 0.7rem 1.5rem
-  line-height 2rem
+  line-height $navbarHeight - 1.4rem
   position relative
   a, span, img
-    vertical-align middle
     display inline-block
   .logo
-    display inline-block
-    height 2rem
-    min-width 2rem
+    height $navbarHeight - 1.4rem
+    min-width $navbarHeight - 1.4rem
     margin-right 0.8rem
+    vertical-align top
   .site-name
     font-size 1.3rem
-    line-height 2rem
     font-weight 600
     color $textColor
     position relative

@@ -17,8 +17,9 @@ VuePress 网站实际上是由 [Vue](http://vuejs.org/), [Vue Router](https://gi
 - [内置 markdown 扩展](./markdown.md)，针对技术文档进行了优化
 - [能够利用内嵌在 markdown 文件中的 Vue 代码](./using-vue.md)
 - [以 Vue 驱动的自定义主题系统](./custom-themes.md)
-- PWA 支持
+- 自动生成 Service Worker
 - Google Analytics 集成
+- 多语言支持
 - 一个默认主题：
   - 响应式布局
   - 可选的主页
@@ -26,11 +27,10 @@ VuePress 网站实际上是由 [Vue](http://vuejs.org/), [Vue Router](https://gi
   - 可定制的导航栏和侧边栏
   - 自动生成的 GitHub 链接和页面编辑链接
 
-## 待实现特性(todo features)
+## 待实现特性(todo)
 
 VuePress 的开发仍在进行中。有几件目前不支持，但计划做的功能：
 
-- 多语言支持
 - Algolia DocSearch 集成
 - 博客支持
 
