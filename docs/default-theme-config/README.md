@@ -232,6 +232,8 @@ module.exports = {
     docsBranch: 'master',
     // 默认为 true，设置为 false 来禁用
     editLinks: true
+    // custom text for edit link. Defaults to "Edit this page"
+    editLinkText: 'Help us improve this page!'
   }
 }
 ```

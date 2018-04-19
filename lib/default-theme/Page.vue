@@ -2,7 +2,7 @@
   <div class="page">
     <Content :custom="false"/>
     <div class="content edit-link" v-if="editLink">
-      <a :href="editLink" target="_blank" rel="noopener noreferrer">编辑此页面</a>
+      <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
       <OutboundLink/>
     </div>
     <div class="content page-nav" v-if="prev || next">
@@ -65,20 +65,27 @@
           path += '.md'
         }
 
-        if (repo && editLinks) {
-          const base = outboundRE.test(repo)
-            ? repo
-            : `https://github.com/${repo}`
-          return (
-            base.replace(endingSlashRE, '') +
-            `/edit/${docsBranch}/` +
-            docsDir.replace(endingSlashRE, '') +
-            path
-          )
-        }
+      if (repo && editLinks) {
+        const base = outboundRE.test(repo)
+          ? repo
+          : `https://github.com/${repo}`
+        return (
+          base.replace(endingSlashRE, '') +
+          `/edit/${docsBranch}/` +
+          docsDir.replace(endingSlashRE, '') +
+          path
+        )
       }
+    },
+    editLinkText () {
+      return (
+        this.$themeLocaleConfig.editLinkText ||
+        this.$site.themeConfig.editLinkText ||
+        `编辑此页面`
+      )
     }
   }
+}
 
   function resolvePrev (page, items) {
     return find(page, items, -1)
