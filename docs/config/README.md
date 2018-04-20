@@ -98,6 +98,13 @@ Specify the host to use for the dev server.
 此外，只有在你能够使用 SSL 部署你的站点时才能启用此功能，因为 service worker 只能在 HTTPs URLs 下注册。
 :::
 
+### locales
+
+- Type: `{ [path: string]: Object }`
+- Default: `undefined`
+
+Specify locales for i18n support. For more details, see the guide on [Internationalization](../guide/i18n.md).
+
 ## 主题化(theming)
 
 ### theme
