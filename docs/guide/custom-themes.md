@@ -54,6 +54,10 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 
 最后，别忘了 `this.$route` 和 `this.$router` 也可作为 Vue Router API 的一部分。
 
+## 内容摘要(content excerpt)
+
+如果 markdown 文件包含一个 `<!-- more -->` 注释，那么注释上方的任何内容都将被提取，然后暴露在 `$page.excerpt` 中。如果你正在为博客创建自定义主题，可以使用此数据来渲染带有摘要信息的文章列表。
+
 ## 内容出口(content outlet)
 
 所渲染的当前 `.md` 文件的编译内容将作为特殊的 `<Content/>` 全局组件来使用。你需要将其呈现在布局的某个位置以显示页面的内容。最简单的主题可以是一个带有以下内容的 `Layout.vue` 组件：
@@ -66,7 +70,22 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 </template>
 ```
 
-## 使用来自依赖项的主题(using theme from a dependency)
+## App Level Enhancements
+
+Themes can enhance the Vue app that VuePress uses by exposing an `enhanceApp.js` file at the root of the theme. The file should `export default` a hook function which will receive an object containing some app level values. You can use this hook to install additional Vue plugins, register global components, or add additional router hooks:
+
+``` js
+export default ({
+  Vue, // VuePress 应用程序正在使用的 Vue 构造函数
+  options, // 用于 Vue 根实例的一些选项
+  router, // 用于应用程序的 router 实例
+  siteData // 网站元数据
+}) => {
+  // ……执行一些其他的应用程序级别的优化
+}
+```
+
+## 从依赖中引用主题(using theme from a dependency)
 
 主题可以在 npm 上以原始 Vue SFC 格式发布为 `vuepress-theme-xxx`。
 

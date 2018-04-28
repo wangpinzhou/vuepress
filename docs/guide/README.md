@@ -31,7 +31,6 @@ VuePress 网站实际上是由 [Vue](http://vuejs.org/), [Vue Router](https://gi
 
 VuePress 的开发仍在进行中。有几件目前不支持，但计划做的功能：
 
-- Algolia DocSearch 集成
 - 博客支持
 
 欢迎贡献！

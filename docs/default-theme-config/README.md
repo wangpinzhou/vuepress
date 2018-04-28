@@ -8,7 +8,7 @@ sidebar: auto
 此页面上列出的所有选项仅适用于默认主题。如果你使用的是自定义主题，则选项可能会有所不同。
 :::
 
-## 主页(Homepage)
+## 主页(homepage)
 
 默认主题提供了一个主页布局（用于[该网站的主页](/)）。要使用它，需要在你的根目录 `README.md` 的 [YAML front matter](../guide/markdown.html#yaml-front-matter) 中指定 `home：true`，并加上一些其他的元数据。这是本网站使用的实际数据：
 
@@ -33,7 +33,11 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 如果你想彻底自定义主页的布局，你还可以使用[自定义布局](#custom-layout-for-specific-pages)
 
-## 导航链接(navbar links)
+## 导航栏(navbar)
+
+导航栏包括页面标题、[搜索框](#search-box), [导航栏链接](#navbar-links)、[多语言支持](../guide/i18n.md) 和 [仓库链接](#git-repo-and-edit-links)，它们都取决于你的配置。
+
+### 导航栏链接(navbar links)
 
 你可以通过 `themeConfig.nav` 将链接添加到导航栏中：
 
@@ -84,6 +88,16 @@ module.exports = {
     ]
   }
 }
+```
+
+### 禁用导航栏
+
+可以通过设置 `YAML front matter`，来禁用某个特定页面的导航栏：
+
+``` yaml
+---
+navbar: false
+---
 ```
 
 ## 侧边栏(sidebar)
@@ -146,44 +160,58 @@ module.exports = {
 
 ### 多个侧边栏(multiple sidebars)
 
-如果你希望为不同的页面分组显示不同的侧边栏，请先将页面组织到目录中：
+如果你想要在不同页面中，显示不同的侧边栏组，请先将页面按照需要，组织在多个目录中，以便进行分组：
 
 ```
 .
 ├─ README.md
-├─ foo
+├─ contact.md
+├─ about.md
+├─ foo/
 │  ├─ README.md
 │  ├─ one.md
 │  └─ two.md
-└─ bar
+└─ bar/
    ├─ README.md
    ├─ three.md
    └─ four.md
 ```
 
-然后，使用以下侧边栏配置：
+然后，修改你的配置，将每个页面定义到不同的 sidebar 中。
 
 ``` js
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
     sidebar: {
-      // 侧边栏在 /foo/ 上
       '/foo/': [
-        '',
-        'one',
-        'two'
+        '',     /* /foo/ */
+        'one',  /* /foo/one.html */
+        'two'   /* /foo/two.html */
       ],
-      // 侧边栏在 /bar/ 上
+
       '/bar/': [
-        '',
-        'three',
-        'four'
+        '',      /* /bar/ */
+        'three', /* /bar/three.html */
+        'four'   /* /bar/four.html */
+      ],
+
+      // 回退(fallback)侧边栏配置
+      '/': [
+        '',        /* / */
+        'contact', /* /contact.html */
+        'about'    /* /about.html */
       ]
     }
   }
 }
 ```
+
+::: warning 警告
+请确保将回退(fallback)侧边栏，定义在配置的最后。
+
+VuePress 会按从上到下的顺序，遍历侧边栏配置。如果回退侧边栏定义在第一位，VuePress 会无法正确的匹配 `/foo/` 或 `/bar/four.html`，因为他们都以 `/` 为开始。
+:::
 
 ### 单页自动补充工具栏(auto sidebar for single pages)
 
@@ -205,7 +233,39 @@ sidebar: false
 ---
 ```
 
-## 上一页/下一页链接(prev/next links)
+## 搜索框(search box)
+
+### 内置搜索(built-in search)
+
+可以通过 `themeConfig.search: false` 禁用内置搜索框，以及通过 `themeConfig.searchMaxSuggestions` 来调整搜索框显示的搜索提示数量：
+
+``` js
+module.exports = {
+  themeConfig: {
+    search: false,
+    searchMaxSuggestions: 10
+  }
+}
+```
+
+### Algolia 搜索
+
+可以通过 `themeConfig.algolia` 选项，来用 [Algolia DocSearch](https://community.algolia.com/docsearch/) 替换内置搜索。要启用 Algolia 搜索，至少需要提供 `apiKey` 和 `indexName`：
+
+```js
+module.exports = {
+  themeConfig: {
+    algolia: {
+      apiKey: '<API_KEY>',
+      indexName: '<INDEX_NAME>'
+    }
+  }
+}
+```
+
+更多信息，请参考 [Algolia DocSearch 文档](https://github.com/algolia/docsearch#docsearch-options)。
+
+## 上一页 / 下一页链接(prev / next links)
 
 根据激活页面的侧边栏顺序自动推断上一个和下一个链接。你也可以使用 `YAML front matter` 来显式覆盖或禁用它们：
 
@@ -216,7 +276,7 @@ next: false
 ---
 ```
 
-## GitHub 仓库和编辑链接
+## Git 仓库和编辑链接
 
 提供 `themeConfig.repo` 会在导航栏中自动生成一个 GitHub 链接，并在每个页面的底部显示「编辑此页面」链接。
 
@@ -224,16 +284,24 @@ next: false
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
-    // 假定 GitHub。也可以是一个完整的 GitLab 网址
+    // 假定 GitHub。也可以是一个完整的 GitLab URL。
     repo: 'vuejs/vuepress',
-    // 如果你的文档不在仓库的根部
+    // 自定义项目仓库链接文字
+    // 默认根据 `themeConfig.repo` 中的 URL 来自动匹配是 "GitHub"/"GitLab"/"Bitbucket" 中的哪个，如果不设置时是 "Source"。
+    repoLabel: '贡献代码！',
+
+    // 以下为可选的 "Edit this page" 链接选项
+
+    // 如果你的文档和项目位于不同仓库：
+    docsRepo: 'vuejs/vuepress',
+    // 如果你的文档不在仓库的根目录下：
     docsDir: 'docs',
-    // 可选，默认为 master
+    // 如果你的文档在某个特定的分支（默认是 'master' 分支）：
     docsBranch: 'master',
     // 默认为 true，设置为 false 来禁用
-    editLinks: true
-    // custom text for edit link. Defaults to "Edit this page"
-    editLinkText: 'Help us improve this page!'
+    editLinks: true,
+    // 自定义编辑链接的文本。默认是 "Edit this page"
+    editLinkText: '帮助我们改进页面内容！'
   }
 }
 ```
@@ -265,8 +333,10 @@ pageClass: custom-page-class
 然后你就可以只编写针对该页面的 CSS：
 
 ``` css
+/* .vuepress/override.styl */
+
 .theme-container.custom-page-class {
-  /* 指定页面的规则 */
+  /* 页面特定的规则 */
 }
 ```
 
@@ -282,7 +352,7 @@ layout: SpecialLayout
 
 这将为给定页面渲染 `.vuepress/components/SpecialLayout.vue`。
 
-## Ejecting
+## ejecting
 
 你可以将默认主题的源代码复制到 `.vuepress/theme` 中，来使用 `vuepress eject [targetDir]` 命令彻底自定义主题。但是请注意，一旦你 eject，即使你升级 VuePress 版本，你这仍然是自己的主题，并且不会收到对默认主题的未来更新或错误修复。
 

@@ -19,6 +19,7 @@ module.exports = {
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
   serviceWorker: true,
+  theme: 'vue',
   themeConfig: {
     repo: 'docschina/vuepress',
     editLinks: true,

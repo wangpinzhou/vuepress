@@ -17,6 +17,10 @@ module.exports = {
 
 请查阅 [配置参考](../config/) 以获取完整的选项列表。
 
+::: tip 可替代的配置格式
+你也可以使用 YAML(`.vuepress/config.yml`) 或 TOML(`.vuepress/config.toml`) 格式编写配置文件。
+:::
+
 ## 主题配置(theme configuration)
 
 VuePress 主题，负责网站的所有布局和交互细节。VuePress 附带一个默认主题（你现在看到的就是），专门为技术文档设计。它暴露许多选项，允许你自定义导航栏(navbar)、侧边栏(sidebar)和主页(homepage)等。详细信息请查看 [默认主题配置](../default-theme-config/) 页面。
@@ -31,7 +35,8 @@ VuePress 主题，负责网站的所有布局和交互细节。VuePress 附带�
 export default ({
   Vue, // 当前 VuePress 应用所使用的 Vue 版本
   options, // 根 Vue 实例的选项
-  router // 应用的路由实例
+  router, // 应用程序的路由实例
+  siteData // 网站元数据
 }) => {
   // ...使用应用程序级别的增强功能
 }
