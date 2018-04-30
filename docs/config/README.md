@@ -179,28 +179,28 @@ module.exports = {
 - Type: `Object`
 - Default: `{ preferPathResolver: 'webpack' }`
 
-Options for [stylus-loader](https://github.com/shama/stylus-loader).
+提供给 [stylus-loader](https://github.com/shama/stylus-loader) 的参数。
 
 ### scss
 
 - Type: `Object`
 - Default: `{}`
 
-Options for [sass-loader](https://github.com/postcss/postcss-loader) to load `*.scss` files.
+提供给 [sass-loader](https://github.com/postcss/postcss-loader) 的参数，用来加载 `*.scss` 文件。
 
 ### sass
 
 - Type: `Object`
 - Default: `{ indentedSyntax: true }`
 
-Options for [sass-loader](https://github.com/webpack-contrib/sass-loader) to load `*.sass` files.
+提供给 [sass-loader](https://github.com/webpack-contrib/sass-loader) 的参数，用来加载 `*.sass` 文件。
 
 ### less
 
 - Type: `Object`
 - Default: `{}`
 
-Options for [less-loader](https://github.com/webpack-contrib/less-loader).
+提供给 [less-loader](https://github.com/webpack-contrib/less-loader) 的参数。
 
 ### configureWebpack
 
