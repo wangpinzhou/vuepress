@@ -70,9 +70,9 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 </template>
 ```
 
-## App Level Enhancements
+## 应用级别的增强(App level enhancements)
 
-Themes can enhance the Vue app that VuePress uses by exposing an `enhanceApp.js` file at the root of the theme. The file should `export default` a hook function which will receive an object containing some app level values. You can use this hook to install additional Vue plugins, register global components, or add additional router hooks:
+主题可以通过在主题根文件的 `enhanceApp.js` 文件来增强 VuePress 使用的 Vue 应用。该文件应该通过 `export default` 命令导出一个钩子函数，并接受一个包含了一些应用级别属性的对象作为参数。你可以使用这个钩子来安装一些附加的 Vue 插件、注册全局组件，或者增加额外的路由钩子：
 
 ``` js
 export default ({
