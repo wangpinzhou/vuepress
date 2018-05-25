@@ -2,6 +2,8 @@
   <div class="page">
     <Content :custom="false"/>
     <div class="content edit-link" v-if="editLink">
+      <a :href="rawLink" target="_blank" rel="noopener noreferrer">查看原文</a>
+      |
       <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
       <OutboundLink/>
       <div v-if="lastUpdated" class="last-updated">
@@ -104,6 +106,11 @@ export default {
         this.$site.themeConfig.editLinkText ||
         `Edit this page`
       )
+    },
+    rawLink () {
+      const path = normalize(this.$page.path)
+      const rawPath = `https://vuepress.vuejs.org${path}.html`
+      return rawPath
     }
   }
 }
@@ -139,7 +146,6 @@ function find (page, items, offset) {
 
 .page
   padding-bottom 2rem
-
 .edit-link.content
   padding-top 0 !important
   a
@@ -173,5 +179,4 @@ function find (page, items, offset) {
     text-align left
     margin-top 1rem
     font-size .8em
-
 </style>
