@@ -396,9 +396,3 @@ layout: SpecialLayout
 ## ejecting
 
 你可以将默认主题的源代码复制到 `.vuepress/theme` 中，来使用 `vuepress eject [targetDir]` 命令彻底自定义主题。但是请注意，一旦你 eject，即使你升级 VuePress 版本，你这仍然是自己的主题，并且不会收到对默认主题的未来更新或错误修复。
-
-***
-
-> 原文：[https://vuepress.vuejs.org/default-theme-config/](https://vuepress.vuejs.org/default-theme-config/)
-
-***

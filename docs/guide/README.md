@@ -50,12 +50,6 @@ VuePress 能做的事情，Nuxt 也同样能够实现，但是，它是为构建
 
 Hexo 一直在为 Vue 文档提供服务 - 事实上，离我们的主站完全迁移到 VuePress，可能还要经过一段时间。其中最大的问题是，它的主题系统是非常静态和基于字符串的 - 我们确实需要利用 Vue 来实现布局和交互。此外，无法对 Hexo 的 markdown 渲染，进行极其灵活的配置。
 
-***
-
-> 原文：[https://vuepress.vuejs.org/guide/](https://vuepress.vuejs.org/guide/)
-
-***
-
 ### GitBook
 
 我们大部分的子项目文档中已经使用了 GitBook。GitBook 的主要问题是有大量文件时，它的开发重载性能简直令人无法容忍。它的默认主题也只有一个非常有限的导航结构，并且主题系统也不是基于 Vue 的。GitBook 背后的团队也更注重将其打造为一个商业产品，而不是开源工具。

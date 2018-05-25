@@ -64,9 +64,3 @@ yarn docs:build # 或 npm run docs:build
 ```
 
 默认情况下，构建的文件会位于 `.vuepress/dist` 中，该文件可以通过 `.vuepress/config.js` 中的 `dest` 字段进行配置。构建的文件可以部署到任何静态文件服务器。关于如何部署到一些常用服务，请参考 [部署指南](./deploy.md)。
-
-***
-
-> 原文：[https://vuepress.vuejs.org/guide/getting-started.html](https://vuepress.vuejs.org/guide/getting-started.html)
-
-***

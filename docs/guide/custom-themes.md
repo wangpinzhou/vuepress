@@ -109,9 +109,3 @@ VuePress 将尝试定位并使用 `node_modules/vuepress-theme-awesome/Layout.vu
 ## 自定义默认主题
 
 `vuepress eject [targetDir]` 命令会将默认主题的源代码复制到 `.vuepress/theme` 中，来允许彻底的自定义。但是请注意，一旦你 eject，即使你升级 VuePress 版本，你这仍然是自己的主题，并且不会收到对默认主题的未来更新或错误修复。
-
-***
-
-> 原文：[https://vuepress.vuejs.org/guide/custom-themes.html](https://vuepress.vuejs.org/guide/custom-themes.html)
-
-***

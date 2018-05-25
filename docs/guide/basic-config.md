@@ -41,9 +41,3 @@ export default ({
   // ...使用应用程序级别的增强功能
 }
 ```
-
-***
-
-> 原文：[https://vuepress.vuejs.org/guide/basic-config.html](https://vuepress.vuejs.org/guide/basic-config.html)
-
-***

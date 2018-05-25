@@ -175,9 +175,3 @@ export default {
   }
 }
 </script>
-
-***
-
-> 原文：[https://vuepress.vuejs.org/guide/using-vue.html](https://vuepress.vuejs.org/guide/using-vue.html)
-
-***
