@@ -257,4 +257,3 @@ module.exports = {
 - Default: `false`
 
 如果你只针对常青树浏览器，请设置为 `true` 。这将禁用 IE5 的 ES5 转码和 polyfill，导致更快的构建和更小的文件。
-
