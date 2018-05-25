@@ -1,4 +1,4 @@
-# markdown 扩展
+# Markdown 扩展
 
 ## 标题锚点(header anchors)
 
@@ -48,12 +48,14 @@
 
 ### 外部链接(external links)
 
-外部链接会被自动地设置为 `target="_blank"`：
+外部链接会被自动地设置为 `target="_blank" rel="noopener noreferrer"`：
 
 - [vuejs.org](https://vuejs.org)
 - [VuePress on GitHub](https://github.com/vuejs/vuepress)
 
-## front matter
+你可以自定义通过配置 [config.markdown.externalLinks](../config/#markdown-externallinks) 来自定义外部链接的特性。
+
+## Front Matter
 
 提供开箱即用的 [YAML front matter](https://jekyllrb.com/docs/frontmatter/)：
 
@@ -78,11 +80,11 @@ meta:
 ---
 ```
 
-### 其他格式的 front matter
+### 其他可选择的 Front Matter 格式
 
-除了 YAML 之外，VuePress 也支持 JSON 或者 [TOML](https://github.com/toml-lang/toml) 格式的 front matter。
+除了 YAML，VuePress 也支持 JSON 或者 [TOML](https://github.com/toml-lang/toml) 格式的 front matter。
 
-JSON 格式的 front matter 需要以花括号开头和结尾：
+JSON front matter 需要使用花括号开头和结尾：
 
 ```
 ---
@@ -93,7 +95,7 @@ JSON 格式的 front matter 需要以花括号开头和结尾：
 ---
 ```
 
-TOML 格式的 front matter 需要显式标注出是 TOML：
+TOML front matter 需要显式地标注为 TOML：
 
 ```
 ---toml
@@ -134,7 +136,7 @@ lang = "en-US"
 
 :tada: :100:
 
-可以在 [这里](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json) 查看所有可用的 emoji 列表。
+在[这里](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)可以找到所有可用的 emojis 列表。
 
 ## 目录(table of contents)
 
@@ -148,7 +150,7 @@ lang = "en-US"
 
 [[toc]]
 
-可以使用 [`markdown.toc`](../config/#markdowntoc) 选项，来配置目录(table of contents - TOC)的渲染。
+可以使用 [`markdown.toc`](../config/#markdown-toc) 选项，来配置目录(table of contents - TOC)的渲染。
 
 ## 自定义容器(custom containers)
 

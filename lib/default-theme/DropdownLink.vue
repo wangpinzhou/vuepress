@@ -27,13 +27,12 @@
 </template>
 
 <script>
-import { isExternal, ensureExt } from './util'
 import NavLink from './NavLink.vue'
 import DropdownTransition from './DropdownTransition.vue'
 
 export default {
   components: { NavLink, DropdownTransition },
-  data() {
+  data () {
     return {
       open: false
     }
@@ -44,7 +43,7 @@ export default {
     }
   },
   methods: {
-    toggle() {
+    toggle () {
       this.open = !this.open
     }
   }
@@ -78,7 +77,6 @@ export default {
           font-size 0.9em
       a
         display block
-        height 1.7rem
         line-height 1.7rem
         position relative
         border-bottom none
@@ -97,7 +95,7 @@ export default {
             border-top 3px solid transparent
             border-bottom 3px solid transparent
             position absolute
-            top calc(50% - 2px)
+            top calc(1rem - 2px)
             left 9px
       &:first-child h4
         margin-top 0
@@ -118,7 +116,6 @@ export default {
           padding-top 0
         h4, & > a
           font-size 15px
-          height 2rem
           line-height 2rem
         .dropdown-subitem
           font-size 14px

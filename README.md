@@ -1,8 +1,16 @@
-<div align="center">
-  <a href="https://docschina.org">
-    <img width="200" heigth="200" src="site.png">
+<p align="center">
+  <a href="https://docschina.org" target="_blank">
+    <img width="280" src="site.png" alt="logo">
   </a>
-</div>
+</p>
+
+<p align="center">
+  <a href="https://npmcharts.com/compare/vuepress?minimal=true"><img src="https://img.shields.io/npm/dm/vuepress.svg" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/vuepress"><img src="https://img.shields.io/npm/v/vuepress.svg" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/vuepress"><img src="https://img.shields.io/npm/l/vuepress.svg" alt="License"></a>
+</p>
+
+# VuePress
 
 <h2 align="center">主要链接</h2>
 

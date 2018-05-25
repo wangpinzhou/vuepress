@@ -36,8 +36,8 @@ mkdir docs
 echo '# Hello VuePress' > docs/README.md
 ```
 
-::: warning
-It is currently recommended to use [Yarn](https://yarnpkg.com/en/) instead of npm when installing VuePress into an existing project that has webpack 3.x as a dependency. Npm fails to generate the correct dependency tree in this case.
+::: warning 警告
+当将 VuePress 安装到以 webpack 3.x 作为依赖项的已有项目中时，推荐使用[Yarn](https://yarnpkg.com/en/) 而不是 npm。因为在这种情况下，Npm 无法生成正确的依赖关系树。
 :::
 
 然后，给 `package.json` 添加一些 scripts 脚本：

@@ -40,7 +40,7 @@ export default {
 
 **输出**
 
-<pre><code>{{ 1 + 1 }}</code></pre>
+<div class="language-text"><pre><code>{{ 1 + 1 }}</code></pre></div>
 
 ### 指令
 
@@ -54,7 +54,7 @@ export default {
 
 **输出**
 
-<pre><code><span v-for="i in 3">{{ i }} </span></code></pre>
+<div class="language-text"><pre><code><span v-for="i in 3">{{ i }} </span></code></pre></div>
 
 ### 访问网站和页面数据
 
@@ -126,7 +126,7 @@ export default {
 确保自定义组件的名称包含连字符或符合 PascalCase 命名规则。否则，它将被视为内联元素，并被包裹在一个 `<p>` 标签内，这将导致 hydration （Vue 的渲染子过程）不匹配，因为 `<p>` 不允许块元素放置在其中。
 :::
 
-### 使用预处理器(using pre-processors)
+### 使用预处理器
 
 VuePress 已经为如下预处理器内置了相关的 webpack 配置：`sass`, `scss`, `less`, `stylus` 和 `pug`。要使用它们你只需要在项目中安装对应的依赖即可。例如，要使用 `sass`，需要在项目中安装：
 
@@ -134,7 +134,7 @@ VuePress 已经为如下预处理器内置了相关的 webpack 配置：`sass`, 
 yarn add -D sass-loader node-sass
 ```
 
-然后，你就可以在 markdown 和主题组件使用如下代码：
+接着你就可以在 Markdown 或者组件中使用如下代码：
 
 ``` vue
 <style lang="sass">
@@ -149,15 +149,15 @@ yarn add -D sass-loader node-sass
 yarn add -D pug pug-plain-loader
 ```
 
-::: tip 提示
-如果你是 Stylus 用户，你并不需要在你的项目中安装 `stylus` 和 `stylus-loader`，因为 VuePress 在内部也使用了 Stylus。
+::: tip
+如果你是 Stylus 用户，那么不需要在项目中安装 `stylus` 和 `stylus-loader`，因为VuePress 内部已经使用了 Stylus。
 
-对于没有内置 webpack 配置支持的预处理器，除了安装必要的依赖外，还需要 [扩展内部 webpack 配置](../config/#configurewebpack)。
+对于没有内置 webpack 配置支持的预处理器，除了安装必要的依赖项外，还需要[扩展内部 webpack 配置](../config/#configurewebpack)。
 :::
 
-## 脚本和样式提升(script & style hoisting)
+## 脚本和样式提升
 
-有时你可能需要将一些 JavaScript 或 CSS 仅应用于当前页面。在这些情况下，你可以在 markdown 文件中直接编写原生的 `<script>` 和 `<style>` 块，并将它们从编译的 HTML 中提取出来，以 `<script>` 和 `<style>` 的形式插入到生成 Vue 单个文件组件中。
+有时你可能需要将一些 JavaScript 或 CSS 仅用于当前页面。在这些情况下，你可以在 markdown 文件中直接编写根级别的 `<script>` 和 `<style>` 标签，它们会从编译的 HTML 中提取出来，并作为生成的 Vue 单文件组件的 `<script>` 和 `<style >` 标签。
 
 <p class="demo" :class="$style.example"></p>
 
@@ -171,7 +171,7 @@ yarn add -D pug pug-plain-loader
 export default {
   mounted () {
     document.querySelector(`.${this.$style.example}`)
-      .textContent = '这是通过内联脚本渲染的并由内嵌 CSS 样式呈现'
+      .textContent = '这是通过内联脚本中的内嵌 CSS 样式渲染的。'
   }
 }
 </script>

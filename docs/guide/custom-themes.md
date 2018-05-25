@@ -28,6 +28,7 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
   "base": "/",
   "pages": [
     {
+      "lastUpdated": 1524027677000,
       "path": "/",
       "title": "VuePress",
       "frontmatter": {}
@@ -43,7 +44,8 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 
 ``` json
 {
-  "path": "/custom-themes.html",
+  "lastUpdated": 1524847549000,
+  "path": "/guide/custom-themes.html",
   "title": "自定义主题",
   "headers": [/* ... */],
   "frontmatter": {}
@@ -53,6 +55,11 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 如果用户在 `.vuepress/config.js` 中提供 `themeConfig`，它也可以用 `$site.themeConfig`。你可以使用它来允许用户自定义主题的行为 - 例如，指定类别和页面顺序。然后，你可以将这些数据与 `$site.pages` 一起使用来动态构建导航链接。
 
 最后，别忘了 `this.$route` 和 `this.$router` 也可作为 Vue Router API 的一部分。
+
+::: tip 提示
+`lastUpdated` 是该文件最后一次 git 提交的 UNIX 时间戳，更多详细信息请参考[最近的更新](../default-theme-config/#last-updated)。
+
+:::
 
 ## 内容摘要(content excerpt)
 
@@ -76,12 +83,12 @@ VuePress 使用 Vue 单个文件组件来定制主题。要使用自定义布局
 
 ``` js
 export default ({
-  Vue, // VuePress 应用程序正在使用的 Vue 构造函数
-  options, // 用于 Vue 根实例的一些选项
-  router, // 用于应用程序的 router 实例
-  siteData // 网站元数据
+  Vue, // the version of Vue being used in the VuePress app
+  options, // the options for the root Vue instance
+  router, // the router instance for the app
+  siteData // site metadata
 }) => {
-  // ……执行一些其他的应用程序级别的优化
+  // ...apply enhancements to the app
 }
 ```
 

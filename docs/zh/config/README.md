@@ -44,7 +44,7 @@ sidebar: auto
 ``` js
 module.exports = {
   head: [
-    ['link', { rel: 'icon', href: `/logo.png` }]
+    ['link', { rel: 'icon', href: '/logo.png' }]
   ]
 }
 ```
@@ -93,8 +93,8 @@ module.exports = {
 - `sw-error`
 
 ::: tip PWA NOTES
-`serviceWorker` 仅仅用来控制 service worker，为了让你的网站完全地兼容 PWA，你需要在 `.vuepress/public` 提供 Manifest 和 icons，更多细节，请参见 [MDN docs about the Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest).
-当然，仅仅只在你的网站部署后能用 SSL 的时候开启它，因为 service worker 只能在 HTTPs 的链接下注册。
+`serviceWorker` 选项仅仅用来控制 service worker，为了让你的网站完全地兼容 PWA，你需要在 `.vuepress/public` 提供 Manifest 和 icons，更多细节，请参见 [MDN docs about the Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+此外，只有你能够使用 SSL 部署你的站点时才能启用此功能，因为 service worker 只能在 HTTPs 的 URL 下注册。
 :::
 
 ### locales
@@ -111,7 +111,7 @@ module.exports = {
 - 类型: `string`
 - 默认值: `undefined`
 
-当你使用自定义主题的时候，需要指定它。当值为 `"foo"` 时，VuePress 将会尝试去加载位于 `node_modules/vuepress-theme-awesome/Layout.vue` 的主题组件。
+当你使用自定义主题的时候，需要指定它。当值为 `"foo"` 时，VuePress 将会尝试去加载位于 `node_modules/vuepress-theme-foo/Layout.vue` 的主题组件。
 
 ### themeConfig
 
@@ -126,12 +126,26 @@ module.exports = {
 
 ## Markdown
 
+### markdown.lineNumbers
+
+- 类型: `boolean`
+- 默认值: `undefined`
+
+是否在每个代码块的左侧显示行号。
+
 ### markdown.anchor
 
 - 类型: `Object`
 - 默认值: `{ permalink: true, permalinkBefore: true, permalinkSymbol: '#' }`
 
 [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 的选项。
+
+### markdown.externalLinks
+
+- Type: `Object`
+- Default: `{ target: '_blank', rel: 'noopener noreferrer' }`
+
+这个键值对将会作为特性被增加到是外部链接的 `<a>` 标签上，默认的选项将会在新窗口中打开一个该外部链接。
 
 ### markdown.toc
 
@@ -145,12 +159,13 @@ module.exports = {
 - 类型: `Function`
 - 默认值: `undefined`
 
-一个用来对当前的 [markdown-it](https://github.com/markdown-it/markdown-it) 实例应用额外的插件的函数，举例如下：
+一个用于修改当前的 [markdown-it](https://github.com/markdown-it/markdown-it) 实例的默认配置，或者应用额外的插件的函数，举例如下：
 
 ``` js
 module.exports = {
   markdown: {
     config: md => {
+      md.set({ breaks: true })
       md.use(require('markdown-it-xxx'))
     }
   }

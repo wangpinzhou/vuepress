@@ -52,7 +52,7 @@ module.exports = {
 }
 ```
 
-当你提供了一个 `items` 数组而不是一个单一的 `link` 时，它将会显示以 `下拉列表` 的方式显示：
+当你提供了一个 `items` 数组而不是一个单一的 `link` 时，它将显示为一个 `下拉列表` ：
 
 ```js
 module.exports = {
@@ -90,7 +90,18 @@ module.exports = {
 
 ### 禁用导航栏
 
-你可以通过 `YAML front matter` 来禁用掉某个指定页面的导航栏：
+你可以使用 `themeConfig.navbar` 来禁用所有页面的导航栏：
+
+``` js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    navbar: false
+  }
+}
+```
+
+你也可以通过 `YAML front matter` 来禁用某个指定页面的导航栏：
 
 ``` yaml
 ---
@@ -244,6 +255,10 @@ module.exports = {
 }
 ```
 
+::: tip
+内置搜索只会为页面的标题、`h2` 和 `h3` 构建搜索索引，如果你需要全文搜索，你可以使用 [Algolia 搜索](#Algolia-搜索)。
+:::
+
 ### Algolia 搜索
 
 你可以通过 `themeConfig.algolia` 选项来用 [Algolia DocSearch](https://community.algolia.com/docsearch/) 替换内置的搜索框。要启用 Algolia 搜索，你需要至少提供 `apiKey` 和 `indexName`：
@@ -260,6 +275,24 @@ module.exports = {
 ```
 
 更多选项请参考 [Algolia DocSearch 的文档](https://github.com/algolia/docsearch#docsearch-options)。
+
+## 最近更新
+
+你可以通过 `themeConfig.lastUpdated` 选项来获取每个文件最后一次 `git` 提交的 UNIX 时间戳(ms)，同时它将以合适的日期格式显示在每一页的底部：
+
+``` js
+module.exports = {
+  themeConfig: {
+    lastUpdated: 'Last Updated', // string | boolean
+  }
+}
+```
+
+请注意，`themeConfig.lastUpdated` 默认是关闭的，如果给定一个字符串，它将会作为前缀显示（默认值是：`Last Updated`）。
+
+::: warning 使用须知
+  由于 `lastUpdated` 是基于 `git` 的, 所以你只能在一个基于 `git` 的项目中启用它。
+:::
 
 ## 上 / 下一篇链接
 
@@ -294,12 +327,20 @@ module.exports = {
     docsDir: 'docs',
     // 假如文档放在一个特定的分支下：
     docsBranch: 'master',
-    // 默认是 true, 设置为 false 来禁用
+    // 默认是 false, 设置为 true 来启用
     editLinks: true,
     // 默认为 "Edit this page"
     editLinkText: '帮助我们改善此页面！'
   }
 }
+```
+
+你可以通过 `YAML front matter` 来禁用指定页面的编辑链接：
+
+``` yaml
+---
+editLink: false
+---
 ```
 
 ## 简单的 CSS 覆盖

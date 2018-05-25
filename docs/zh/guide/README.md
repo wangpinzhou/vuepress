@@ -15,15 +15,16 @@ VuePress 由两部分组成：一部分是支持用 Vue 开发主题的极简静
 - 为技术文档而优化的 [内置 Markdown 拓展](./markdown.md)
 - [在 Markdown 文件中使用 Vue 组件的能力](./using-vue.md)
 - [Vue 驱动的自定义主题系统](./custom-themes.md)
-- 自动生成 Service Worker
-- Google Analytics 集成
-- 多语言支持
+- [自动生成 Service Worker](../config/#serviceworker)
+- [Google Analytics 集成](../config/#ga)
+- [多语言支持](./i18n.md)
 - 默认主题包含：
   - 响应式布局
-  - 可选的主页
-  - 简洁的开箱即用的标题搜索
-  - 可以自定义的导航栏（navbar）和侧边栏（sidebar）
-  - 自动生成的 GitHub 链接和页面的编辑链接
+  - [可选的主页](../default-theme-config/#首页)
+  - [简洁的开箱即用的标题搜索](../default-theme-config/#内置搜索)
+  - [Algolia 搜索](../default-theme-config/#algolia-搜索)
+  - 可自定义的[导航栏](../default-theme-config/#导航栏) 和[侧边栏](../default-theme-config/#侧边栏)
+  - [自动生成的 GitHub 链接和页面的编辑链接](../default-theme-config/#git-仓库和编辑链接)
 
 ## Todo
 
@@ -47,3 +48,6 @@ VuePress 能做的事情，Nuxt 理论上确实能够胜任，但 Nuxt 是为构
 
 Hexo 一直驱动着 Vue 的文档 —— 事实上，在把我们的主站从 Hexo 迁移到 VuePress 之前，我们可能还有很长的路要走。Hexo 最大的问题在于他的主题系统太过于静态以及过度地依赖纯字符串，而我们十分希望能够好好地利用 Vue 来处理我们的布局和交互，同时，Hexo 的 Markdown 渲染的配置也不是最灵活的。
 
+### GitBook
+
+我们的子项目文档一直都在使用 GitBook。GitBook 最大的问题在于当文件很多时，每次编辑后的重新加载时间长得令人无法忍受。它的默认主题导航结构也比较有限制性，并且，主题系统也不是 Vue 驱动的。GitBook 背后的团队如今也更专注于将其打造为一个商业产品而不是开源工具。

@@ -92,7 +92,18 @@ module.exports = {
 
 ### 禁用导航栏
 
-可以通过设置 `YAML front matter`，来禁用某个特定页面的导航栏：
+可以使用 `themeConfig.navbar`，来禁用某个特定页面的导航栏：
+
+``` js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    navbar: false
+  }
+}
+```
+
+You can disable the navbar for a specific page via `YAML front matter`:
 
 ``` yaml
 ---
@@ -100,9 +111,9 @@ navbar: false
 ---
 ```
 
-## 侧边栏(sidebar)
+## Sidebar
 
-要启用侧边栏，请使用 `themeConfig.sidebar`。基本配置需要一系列链接：
+要启用侧边栏, 请使用 `themeConfig.sidebar`。基本的配置需要一个链接数组：
 
 ``` js
 // .vuepress/config.js
@@ -160,7 +171,7 @@ module.exports = {
 
 ### 多个侧边栏(multiple sidebars)
 
-如果你想要在不同页面中，显示不同的侧边栏组，请先将页面按照需要，组织在多个目录中，以便进行分组：
+如果你希望为不同的内容部分显示不同的侧边栏，请先组织你的页面，放到每个要求部分的目录中:
 
 ```
 .
@@ -177,7 +188,7 @@ module.exports = {
    └─ four.md
 ```
 
-然后，修改你的配置，将每个页面定义到不同的 sidebar 中。
+然后，修改你的配置，将每个页面定义到不同的侧边栏中。
 
 ``` js
 // .vuepress/config.js
@@ -248,11 +259,15 @@ module.exports = {
 }
 ```
 
-### Algolia 搜索
+::: tip
+如果你需要全文搜索，内置搜索只能从标题 `h2` 和 `h3` 标题构建索引，你可以使用 [Algolia 搜索](#algolia-search)。
+:::
+
+### Algolia Search
 
 可以通过 `themeConfig.algolia` 选项，来用 [Algolia DocSearch](https://community.algolia.com/docsearch/) 替换内置搜索。要启用 Algolia 搜索，至少需要提供 `apiKey` 和 `indexName`：
 
-```js
+``` js
 module.exports = {
   themeConfig: {
     algolia: {
@@ -264,6 +279,24 @@ module.exports = {
 ```
 
 更多信息，请参考 [Algolia DocSearch 文档](https://github.com/algolia/docsearch#docsearch-options)。
+
+## 最近更新
+
+`themeConfig.lastUpdated` 选项允许你获取每个文件的最后一次 git 提交的 UNIX 时间戳（ms），并且它也会以合适的格式显示在每个页面的底部：
+
+``` js
+module.exports = {
+  themeConfig: {
+    lastUpdated: 'Last Updated', // string | boolean
+  }
+}
+```
+
+请注意，它默认是关闭的，如果给定一个 `string` 类型的值，它将会作为前缀显示（默认值是：`Last Updated`）。
+
+::: warning 警告
+ 因为 `lastUpdated` 是基于 `git` 的, 所以你只能在一个基于 `git` 的项目中启用它。
+:::
 
 ## 上一页 / 下一页链接(prev / next links)
 
@@ -298,12 +331,20 @@ module.exports = {
     docsDir: 'docs',
     // 如果你的文档在某个特定的分支（默认是 'master' 分支）：
     docsBranch: 'master',
-    // 默认为 true，设置为 false 来禁用
+    // 默认为 false，设置为 true 来启用
     editLinks: true,
     // 自定义编辑链接的文本。默认是 "Edit this page"
     editLinkText: '帮助我们改进页面内容！'
   }
 }
+```
+
+你还可以通过 `YAML front matter` 隐藏指定页面上的编辑链接：
+
+``` yaml
+---
+editLink: false
+---
 ```
 
 ## 简单的 CSS 覆盖

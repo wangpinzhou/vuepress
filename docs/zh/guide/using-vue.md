@@ -40,7 +40,7 @@ export default {
 
 **Output**
 
-<pre><code>{{ 1 + 1 }}</code></pre>
+<div class="language-text"><pre><code>{{ 1 + 1 }}</code></pre></div>
 
 ### 指令
 
@@ -54,7 +54,7 @@ export default {
 
 **Output**
 
-<pre><code><span v-for="i in 3">{{ i }} </span></code></pre>
+<div class="language-text"><pre><code><span v-for="i in 3">{{ i }} </span></code></pre></div>
 
 ### 访问网站以及页面的数据
 
@@ -131,13 +131,13 @@ export default {
 
 VuePress 对以下预处理器已经内置相关的 webpack 配置：`sass`、`scss`、`less`、`stylus` 和 `pug`。要使用它们你只需要在项目中安装对应的依赖即可。例如，要使用 `sass`，需要安装：
 
-```bash
+``` bash
 yarn add -D sass-loader node-sass
 ```
  
 然后你就可以在 Markdown 或是组件中使用如下代码：
 
-```vue
+``` vue
 <style lang="sass">
   .title
     font-size: 20px
@@ -146,7 +146,7 @@ yarn add -D sass-loader node-sass
 
 要在组件中使用 `<template lang="pug">`，则需要安装 `pug` 和 `pug-plain-loader`:
 
-```bash
+``` bash
 yarn add -D pug pug-plain-loader
 ```
 

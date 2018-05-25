@@ -15,9 +15,9 @@ sidebar: auto
 
 在其他选项中，`base` 会自动添加到以 `/` 开头的所有 URL 中，因此你只需指定一次即可。
 
-**另请参阅：**
+**另请参考：**
 
-- [基本 URL](../guide/assets.md#base-url)
+- [基准 URL](../guide/assets.md#base-url)
 - [部署教程 > Github 页面](../guide/deploy.md#github-pages)
 
 ### title
@@ -44,7 +44,7 @@ sidebar: auto
 ``` js
 module.exports = {
   head: [
-    ['link', { rel: 'icon', href: `/logo.png` }]
+    ['link', { rel: 'icon', href: '/logo.png' }]
   ]
 }
 ```
@@ -54,7 +54,7 @@ module.exports = {
 - Type: `string`
 - Default: `'0.0.0.0'`
 
-Specify the host to use for the dev server.
+指定用于 dev 服务器的主机。
 
 ### port
 
@@ -103,7 +103,7 @@ Specify the host to use for the dev server.
 - Type: `{ [path: string]: Object }`
 - Default: `undefined`
 
-Specify locales for i18n support. For more details, see the guide on [Internationalization](../guide/i18n.md).
+指定用于 i18n 支持，要获取更多细节，请参考[国际化指南](../guide/i18n.md)。
 
 ## 主题化(theming)
 
@@ -127,12 +127,26 @@ Specify locales for i18n support. For more details, see the guide on [Internatio
 
 ## Markdown
 
+### markdown.lineNumbers
+
+- Type: `boolean`
+- Default: `undefined`
+
+是否在每个代码块的左侧显示行号。
+
 ### markdown.slugify
 
 - Type: `Function`
 - Default: [source](https://github.com/vuejs/vuepress/blob/master/lib/markdown/slugify.js)
 
 将标题文本转换为别名(slug)的函数。这会影响标题锚点、目录和侧边栏链接生成的 id 和链接。（译者注：此功能是为了解决非 ASCII 码字符生成链接时的 [bug](https://github.com/vuejs/vuepress/issues/45)，具体代码查看 /lib/markdown/slugify 的 slugify 函数）
+
+### markdown.externalLinks
+
+- Type: `Object`
+- Default: `{ target: '_blank', rel: 'noopener noreferrer' }`
+
+键和值对将被添加到指向外部链接的 `<a>` 标签。默认选项将在新窗口中打开外部链接。
 
 ### markdown.anchor
 
@@ -153,12 +167,13 @@ Specify locales for i18n support. For more details, see the guide on [Internatio
 - Type: `Function`
 - Default: `undefined`
 
-将额外的插件应用于渲染源文件的 [markdown-it](https://github.com/markdown-it/markdown-it) 实例的函数。例如：
+修改默认配置，或将额外的插件应用于渲染源文件的 [markdown-it](https://github.com/markdown-it/markdown-it) 实例的函数。例如：
 
 ``` js
 module.exports = {
   markdown: {
     config: md => {
+      md.set({ breaks: true })
       md.use(require('markdown-it-xxx'))
     }
   }
@@ -242,7 +257,6 @@ module.exports = {
 - Default: `false`
 
 如果你只针对常青树浏览器，请设置为 `true` 。这将禁用 IE5 的 ES5 转码和 polyfill，导致更快的构建和更小的文件。
-
 ***
 
 > 原文：[https://vuepress.vuejs.org/config/](https://vuepress.vuejs.org/config/)

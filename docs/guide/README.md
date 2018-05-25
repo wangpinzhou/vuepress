@@ -17,15 +17,16 @@ VuePress 网站实际上是由 [Vue](http://vuejs.org/), [Vue Router](https://gi
 - [内置 markdown 扩展](./markdown.md)，针对技术文档进行了优化
 - [能够利用内嵌在 markdown 文件中的 Vue 代码](./using-vue.md)
 - [以 Vue 驱动的自定义主题系统](./custom-themes.md)
-- 自动生成 Service Worker
-- Google Analytics 集成
-- 多语言支持
-- 一个默认主题：
+- [自动生成 Service Worker](../config/#serviceworker)
+- [Google Analytics 集成](../config/#ga)
+- [多语言支持](./i18n.md)
+- 一个默认主题包括：
   - 响应式布局
-  - 可选的主页
-  - 简单、开箱即用、基于标题的搜索功能
-  - 可定制的导航栏和侧边栏
-  - 自动生成的 GitHub 链接和页面编辑链接
+  - [可选的主页](../default-theme-config/#homepage)
+  - [简单、开箱即用、基于标题的搜索功能](../default-theme-config/#built-in-search)
+   - [Algolia 搜索](../default-theme-config/#algolia-search)
+  - 可定制的[导航栏](../default-theme-config/#navbar)和[侧边栏](../default-theme-config/#sidebar)
+  - [自动生成的 GitHub 链接和页面编辑链接](../default-theme-config/#git-repo-and-edit-links)
 
 ## 待实现特性(todo)
 
@@ -54,3 +55,7 @@ Hexo 一直在为 Vue 文档提供服务 - 事实上，离我们的主站完全�
 > 原文：[https://vuepress.vuejs.org/guide/](https://vuepress.vuejs.org/guide/)
 
 ***
+
+### GitBook
+
+我们大部分的子项目文档中已经使用了 GitBook。GitBook 的主要问题是有大量文件时，它的开发重载性能简直令人无法容忍。它的默认主题也只有一个非常有限的导航结构，并且主题系统也不是基于 Vue 的。GitBook 背后的团队也更注重将其打造为一个商业产品，而不是开源工具。
