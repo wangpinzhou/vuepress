@@ -103,7 +103,7 @@ module.exports = {
 }
 ```
 
-You can disable the navbar for a specific page via `YAML front matter`:
+你可以通过 `YAML front matter` 来禁用一个指定页面的导航栏：
 
 ``` yaml
 ---
@@ -141,6 +141,22 @@ module.exports = {
 sidebarDepth: 2
 ---
 ```
+
+### 激活的标题链接
+
+默认情况下，当用户滚动页面，查看不同部分时，嵌套的标题链接和 URL 中的哈希值会随之更新，此行为可以通过以下的主题配置来禁用：
+
+``` js
+module.exports = {
+  themeConfig: {
+    activeHeaderLinks: false, // Default: true
+  }
+}
+```
+
+::: tip 提示
+  值得一提的是，当你禁用此选项时，此功能相应的脚本将不会被加载，这是我们性能优化的一个小技巧。
+:::
 
 ### 侧边栏分组(sidebar groups)
 
