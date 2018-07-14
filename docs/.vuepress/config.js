@@ -2,9 +2,14 @@ module.exports = {
   dest: 'vuepress',
   locales: {
     '/': {
+      lang: 'en-US',
+      title: 'VuePress',
+      description: 'Vue-powered Static Site Generator'
+    },
+    '/zh/': {
       lang: 'zh-CN',
       title: 'VuePress',
-      description: 'Vue 驱动的静态站点生成工具'
+      description: 'Vue 驱动的静态网站生成器'
     }
   },
   head: [
@@ -21,31 +26,62 @@ module.exports = {
   serviceWorker: true,
   theme: 'vue',
   themeConfig: {
-    repo: 'docschina/vuepress',
+    repo: 'vuejs/vuepress',
     editLinks: true,
     docsDir: 'docs',
     locales: {
       '/': {
+        label: 'English',
+        selectText: 'Languages',
+        editLinkText: 'Edit this page on GitHub',
+        lastUpdated: 'Last Updated',
+        nav: [
+          {
+            text: 'Guide',
+            link: '/guide/',
+          },
+          {
+            text: 'Config Reference',
+            link: '/config/'
+          },
+          {
+            text: 'Default Theme Config',
+            link: '/default-theme-config/'
+          },
+          {
+            text: 'Changelog',
+            link: 'https://github.com/vuejs/vuepress/blob/master/CHANGELOG.md'
+          }
+        ],
+        sidebar: {
+          '/guide/': genSidebarConfig('Guide')
+        }
+      },
+      '/zh/': {
         label: '简体中文',
         selectText: '选择语言',
-        editLinkText: '编辑此页',
+        editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '上次更新',
         nav: [
           {
             text: '指南',
-            link: '/guide/',
+            link: '/zh/guide/',
           },
           {
-            text: '配置参考',
-            link: '/config/'
+            text: '配置',
+            link: '/zh/config/'
           },
           {
-            text: '默认主题配置',
-            link: '/default-theme-config/'
+            text: '默认主题',
+            link: '/zh/default-theme-config/'
+          },
+          {
+            text: 'Changelog',
+            link: 'https://github.com/vuejs/vuepress/blob/master/CHANGELOG.md'
           }
         ],
         sidebar: {
-          '/guide/': genSidebarConfig('指南')
+          '/zh/guide/': genSidebarConfig('指南')
         }
       }
     }
