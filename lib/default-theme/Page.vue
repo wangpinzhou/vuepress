@@ -100,6 +100,11 @@ export default {
         this.$site.themeConfig.editLinkText ||
         `Edit this page`
       )
+    },
+    rawLink () {
+      const path = normalize(this.$page.path)
+      const rawPath = `https://vuepress.vuejs.org${path}.html`
+      return rawPath
     }
   },
   methods: {
@@ -128,11 +133,6 @@ export default {
         (docsDir ? '/' + docsDir.replace(endingSlashRE, '') : '') +
         path
       )
-    },
-    rawLink () {
-      const path = normalize(this.$page.path)
-      const rawPath = `https://vuepress.vuejs.org${path}.html`
-      return rawPath
     }
   }
 }
