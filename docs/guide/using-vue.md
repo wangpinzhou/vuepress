@@ -126,7 +126,22 @@ export default {
 确保自定义组件的名称，是由连字符(hyphen)拼接，或者遵循帕斯卡命名(PascalCase)。否则，它将被视为内联元素，然后被包裹在一个 `<p>` 标签内，这将导致 hydration 无法匹配，这是因为 `<p>` 中不允许放置块元素。（译注：查看 [SSR 客户端激活(client-side hydration)](https://ssr.vuejs.org/zh/guide/hydration.html)）
 :::
 
-### 使用预处理器
+## 在标题中使用 Vue 组件
+
+你可以在标题中使用 Vue 组件，但是请注意以下两种方式的不同：
+
+| Markdown | 输出的 HTML | 解析后的标题 |
+|--------|-------------|----------------|
+| <pre v-pre><code> # text &lt;Tag/&gt; </code></pre> | `<h1>text <Tag/></h1>` | `text` |
+| <pre v-pre><code> # text \`&lt;Tag/&gt;\` </code></pre> | `<h1>text <code>&lt;Tag/&gt;</code></h1>` | `text <Tag/>` |
+
+被 `<code>` 包装的 HTML 将按原样显示，只有未被包装的 HTML 才会被 Vue 解析。
+
+::: tip
+输出的 HTML 由 [markdown-it](https://github.com/markdown-it/markdown-it) 完成。而解析后的标题由 VuePress 完成，用于[侧边栏](../default-theme-config/README.md#侧边栏)以及文档的标题。
+:::
+
+## 使用预处理器
 
 VuePress 已经为如下预处理器内置了相关的 webpack 配置：`sass`, `scss`, `less`, `stylus` 和 `pug`。要使用它们，你只需要在项目中安装对应的依赖即可。例如，要使用 `sass`，直接在项目中安装：
 
@@ -220,3 +235,7 @@ export default {
 ``` md
 ### Badge <Badge text="beta" type="warn"/> <Badge text="0.10.1+"/>
 ```
+
+**也可以参考：** 
+
+- [在标题中使用 Vue 组件](#在标题中使用-vue-组件)
