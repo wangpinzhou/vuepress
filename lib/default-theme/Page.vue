@@ -134,7 +134,7 @@ export default {
     },
     rawLink () {
       const path = normalize(this.$page.path)
-      const rawPath = `https://vuepress.vuejs.org${path}.html`
+      const rawPath = `https://vuepress.vuejs.org${path}`
       return rawPath
     }
   },
